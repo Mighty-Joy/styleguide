@@ -131,6 +131,8 @@ import welcomeDashboard from "@/catalog/examples/WelcomeDashboard.doc";
 import contentPerformanceHeatmap from "@/catalog/examples/ContentPerformanceHeatmap.doc";
 import creatorPortfolioView from "@/catalog/examples/CreatorPortfolioView.doc";
 import campaignComparisonTable from "@/catalog/examples/CampaignComparisonTable.doc";
+import affiliatePerformanceDashboard from "@/catalog/examples/AffiliatePerformanceDashboard.doc";
+import creatorUGCLibrary from "@/catalog/examples/CreatorUGCLibrary.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -265,6 +267,8 @@ export const DOCS: ComponentDoc[] = [
   contentPerformanceHeatmap,
   creatorPortfolioView,
   campaignComparisonTable,
+  affiliatePerformanceDashboard,
+  creatorUGCLibrary,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -433,6 +437,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       contentPerformanceHeatmap,
       creatorPortfolioView,
       campaignComparisonTable,
+      affiliatePerformanceDashboard,
+      creatorUGCLibrary,
     ],
   },
 ];
