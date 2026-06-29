@@ -131,12 +131,12 @@ function StatesDemo() {
 /* ---- Doc ---- */
 const doc: ComponentDoc = {
   slug: "multi-select",
-  title: "MultiSelect & TagInput",
+  title: "MultiSelect",
   group: "Inputs & Controls",
   status: "stable",
-  summary: "Multi-value select with chip display and free-form tag entry with prefix support.",
+  summary: "Multi-value select with chip display — pick multiple options from a predefined list.",
   description:
-    "Two components: **MultiSelect** picks multiple values from a predefined options list — selected values appear as removable chips inside the trigger. Supports searchable dropdown, icons + descriptions per option, max item cap, and 'Clear all' footer. **TagInput** is a free-form tag entry field — type a tag and press Enter or comma to create it, Backspace to remove the last one. Supports prefix character (# for hashtags, @ for mentions), max tag count, and all standard label/hint/error states. Both display selected values as tinted chip pills with × remove buttons.",
+    "Picks multiple values from a predefined options list — selected values appear as removable chips inside the trigger. Supports searchable dropdown, icons + descriptions per option, max item cap, and 'Clear all' footer. Selected values display as tinted chip pills with × remove buttons.",
   demos: [
     { title: "Platform multi-select",            render: () => <PlatformDemo /> },
     { title: "Content type (max 3)",             render: () => <ContentTypeDemo /> },

@@ -98,6 +98,9 @@ import sectionCard from "@/components/ui/SectionCard/SectionCard.doc";
 import formLayout from "@/components/ui/FormLayout/FormLayout.doc";
 import inlineEdit from "@/components/ui/InlineEdit/InlineEdit.doc";
 import keyValueList from "@/components/ui/KeyValueList/KeyValueList.doc";
+import contentCard from "@/catalog/examples/ContentCard.doc";
+import deliverableTracker from "@/catalog/examples/DeliverableTracker.doc";
+import postPerformance from "@/catalog/examples/PostPerformance.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -199,6 +202,9 @@ export const DOCS: ComponentDoc[] = [
   formLayout,
   inlineEdit,
   keyValueList,
+  contentCard,
+  deliverableTracker,
+  postPerformance,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -289,7 +295,7 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
   },
   {
     group: "Patterns",
-    entries: [creatorRecordList, activityTimeline, searchModal, mediaGallery, contentCalendar, audienceInsights],
+    entries: [creatorRecordList, activityTimeline, searchModal, mediaGallery, contentCalendar, audienceInsights, contentCard],
   },
   {
     group: "Record Views",
@@ -337,6 +343,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       invoiceView,
       workspaceSettings,
       settingsPage,
+      deliverableTracker,
+      postPerformance,
     ],
   },
 ];
