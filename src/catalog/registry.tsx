@@ -127,6 +127,8 @@ import creatorEarningsOverview from "@/catalog/examples/CreatorEarningsOverview.
 import partnershipAgreementViewer from "@/catalog/examples/PartnershipAgreementViewer.doc";
 import creatorApplicationReview from "@/catalog/examples/CreatorApplicationReview.doc";
 import campaignBriefBuilder from "@/catalog/examples/CampaignBriefBuilder.doc";
+import welcomeDashboard from "@/catalog/examples/WelcomeDashboard.doc";
+import contentPerformanceHeatmap from "@/catalog/examples/ContentPerformanceHeatmap.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -257,6 +259,8 @@ export const DOCS: ComponentDoc[] = [
   partnershipAgreementViewer,
   creatorApplicationReview,
   campaignBriefBuilder,
+  welcomeDashboard,
+  contentPerformanceHeatmap,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -421,6 +425,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       partnershipAgreementViewer,
       creatorApplicationReview,
       campaignBriefBuilder,
+      welcomeDashboard,
+      contentPerformanceHeatmap,
     ],
   },
 ];
