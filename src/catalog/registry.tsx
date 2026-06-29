@@ -161,6 +161,8 @@ import campaignContentScheduler from "@/catalog/examples/CampaignContentSchedule
 import brandKitManager from "@/catalog/examples/BrandKitManager.doc";
 import creatorPayoutWallet from "@/catalog/examples/CreatorPayoutWallet.doc";
 import campaignMultiplatformBreakdown from "@/catalog/examples/CampaignMultiplatformBreakdown.doc";
+import billingAndSubscription from "@/catalog/examples/BillingAndSubscription.doc";
+import audienceOverlapChecker from "@/catalog/examples/AudienceOverlapChecker.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -325,6 +327,8 @@ export const DOCS: ComponentDoc[] = [
   brandKitManager,
   creatorPayoutWallet,
   campaignMultiplatformBreakdown,
+  billingAndSubscription,
+  audienceOverlapChecker,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -523,6 +527,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       brandKitManager,
       creatorPayoutWallet,
       campaignMultiplatformBreakdown,
+      billingAndSubscription,
+      audienceOverlapChecker,
     ],
   },
 ];
