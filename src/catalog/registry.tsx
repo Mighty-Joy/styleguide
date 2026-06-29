@@ -157,6 +157,8 @@ import campaignNegotiationThread from "@/catalog/examples/CampaignNegotiationThr
 import productCatalogPicker from "@/catalog/examples/ProductCatalogPicker.doc";
 import creatorAvailabilityCalendar from "@/catalog/examples/CreatorAvailabilityCalendar.doc";
 import discoveryFiltersPanel from "@/catalog/examples/DiscoveryFiltersPanel.doc";
+import campaignContentScheduler from "@/catalog/examples/CampaignContentScheduler.doc";
+import brandKitManager from "@/catalog/examples/BrandKitManager.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -317,6 +319,8 @@ export const DOCS: ComponentDoc[] = [
   productCatalogPicker,
   creatorAvailabilityCalendar,
   discoveryFiltersPanel,
+  campaignContentScheduler,
+  brandKitManager,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -511,6 +515,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       productCatalogPicker,
       creatorAvailabilityCalendar,
       discoveryFiltersPanel,
+      campaignContentScheduler,
+      brandKitManager,
     ],
   },
 ];
