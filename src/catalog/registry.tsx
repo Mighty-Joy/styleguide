@@ -137,6 +137,8 @@ import campaignGoalTracker from "@/catalog/examples/CampaignGoalTracker.doc";
 import creatorMatchScore from "@/catalog/examples/CreatorMatchScore.doc";
 import campaignMoodboard from "@/catalog/examples/CampaignMoodboard.doc";
 import creatorScorecard from "@/catalog/examples/CreatorScorecard.doc";
+import brandActionCenter from "@/catalog/examples/BrandActionCenter.doc";
+import campaignLaunchChecklist from "@/catalog/examples/CampaignLaunchChecklist.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -277,6 +279,8 @@ export const DOCS: ComponentDoc[] = [
   creatorMatchScore,
   campaignMoodboard,
   creatorScorecard,
+  brandActionCenter,
+  campaignLaunchChecklist,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -451,6 +455,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       creatorMatchScore,
       campaignMoodboard,
       creatorScorecard,
+      brandActionCenter,
+      campaignLaunchChecklist,
     ],
   },
 ];
