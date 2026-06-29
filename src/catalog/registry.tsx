@@ -113,6 +113,8 @@ import quickAddCreatorModal from "@/catalog/examples/QuickAddCreatorModal.doc";
 import affiliateCodeManager from "@/catalog/examples/AffiliateCodeManager.doc";
 import contractSignatureFlow from "@/catalog/examples/ContractSignatureFlow.doc";
 import creatorPaymentHistory from "@/catalog/examples/CreatorPaymentHistory.doc";
+import teamActivityFeed from "@/catalog/examples/TeamActivityFeed.doc";
+import campaignStatusBoard from "@/catalog/examples/CampaignStatusBoard.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -229,6 +231,8 @@ export const DOCS: ComponentDoc[] = [
   affiliateCodeManager,
   contractSignatureFlow,
   creatorPaymentHistory,
+  teamActivityFeed,
+  campaignStatusBoard,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -379,6 +383,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       affiliateCodeManager,
       contractSignatureFlow,
       creatorPaymentHistory,
+      teamActivityFeed,
+      campaignStatusBoard,
     ],
   },
 ];
