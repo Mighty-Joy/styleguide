@@ -1,0 +1,44 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.label {
+  font-size: var(--sd-text-xs);
+  color: var(--sd-font-secondary);
+  font-weight: 500;
+}
+
+.value {
+  font-size: var(--sd-text-xs);
+  color: var(--sd-font-tertiary);
+  font-weight: 600;
+}
+
+.track {
+  width: 100%;
+  background: var(--sd-bg-tertiary);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+}
+
+.fillAnimated {
+  height: 100%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

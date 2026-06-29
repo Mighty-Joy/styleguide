@@ -1,0 +1,70 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ── Tooltip bubble ── */
+.tooltip {
+  position: absolute;
+  z-index: 9000;
+  white-space: nowrap;
+  background: var(--sd-bg-inverted);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 5px 9px;
+  border-radius: var(--sd-radius-sm);
+  box-shadow: 0 4px 12px -2px rgba(0,0,0,0.25);
+  pointer-events: none;
+  animation: fadeIn 0.1s ease;
+  max-width: 240px;
+  white-space: normal;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Sides ── */
+.top    { bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); }
+.bottom { top: calc(100% + 8px);    left: 50%; transform: translateX(-50%); }
+.left   { right: calc(100% + 8px);  top: 50%;  transform: translateY(-50%); }
+.right  { left: calc(100% + 8px);   top: 50%;  transform: translateY(-50%); }
+
+/* ── Arrow ── */
+.arrow {
+  position: absolute;
+  width: 0; height: 0;
+}
+
+.arrow_top {
+  top: 100%; left: 50%; transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--sd-bg-inverted);
+}
+
+.arrow_bottom {
+  bottom: 100%; left: 50%; transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid var(--sd-bg-inverted);
+}
+
+.arrow_left {
+  left: 100%; top: 50%; transform: translateY(-50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--sd-bg-inverted);
+}
+
+.arrow_right {
+  right: 100%; top: 50%; transform: translateY(-50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid var(--sd-bg-inverted);
+}

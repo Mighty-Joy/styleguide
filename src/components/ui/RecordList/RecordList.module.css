@@ -1,0 +1,133 @@
+/* The canonical responsive record list (replaces the data table for
+   record-with-actions views). Desktop: a CSS subgrid so every row's cells align
+   like a table, but with no fixed min-width (so it compresses instead of
+   horizontally scrolling). Mobile: each row collapses into a stacked card, so
+   the same component serves the agency desktop and the creator mobile app. */
+
+.list {
+  display: grid;
+  width: 100%;
+}
+
+.header,
+.row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.header {
+  padding: 4px 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted-text);
+}
+
+.row {
+  padding: 9px 4px;
+  min-height: 52px;
+}
+
+.rowClickable {
+  cursor: pointer;
+}
+.rowClickable:hover {
+  background: var(--hover-background);
+}
+
+.lead {
+  min-width: 0;
+}
+
+.cell {
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.selectCell {
+  display: inline-flex;
+}
+
+/* Small on-brand checkbox (replaces Mantine <Checkbox size="xs" />). */
+.checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1px solid var(--sd-border-strong);
+  border-radius: var(--sd-radius-xs);
+  background: var(--sd-bg-primary);
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+  transition: background 0.1s ease, border-color 0.1s ease;
+}
+.checkbox::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  transform: scale(0);
+  transition: transform 0.1s ease;
+  box-shadow: inset 1em 1em var(--sd-on-accent);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.checkbox:checked {
+  background: var(--sd-accent);
+  border-color: var(--sd-accent);
+}
+.checkbox:checked::before {
+  transform: scale(1);
+}
+.checkbox:focus-visible {
+  outline: 2px solid var(--sd-accent-tint);
+  outline-offset: 1px;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 22px 4px;
+  color: var(--muted-text);
+  font-size: 14px;
+}
+
+/* Mobile: stack each row into a self-contained card. */
+@media (max-width: 640px) {
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .header {
+    display: none;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    min-height: 0;
+    padding: 14px;
+    border: 1px solid var(--sd-border-light);
+    border-radius: 12px;
+  }
+  .rowClickable:hover {
+    background: transparent;
+  }
+  .actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .collapse {
+    display: none;
+  }
+}

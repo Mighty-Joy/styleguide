@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  background: var(--sd-bg-tertiary);
+  border-radius: var(--sd-radius-pill);
+  padding: 2px 8px;
+  color: var(--sd-font-secondary);
+}
+
+.count {
+  font-size: var(--sd-text-xs);
+  color: var(--sd-font-tertiary);
+  line-height: 1;
+}

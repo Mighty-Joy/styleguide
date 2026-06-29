@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.slot {
+  display: flex;
+  align-items: center;
+  transition: transform 0.1s ease;
+}
+
+.root:hover .slot {
+  transform: translateX(0);
+}

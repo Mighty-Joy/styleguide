@@ -1,0 +1,107 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 280px;
+  width: 100%;
+}
+
+.label {
+  font-size: var(--sd-text-xs);
+  font-weight: 500;
+  color: var(--sd-font-light);
+}
+
+/* ---- base control ---- */
+.control {
+  height: 32px;
+  padding: 0 10px;
+  border-radius: var(--sd-radius-sm);
+  border: 1px solid transparent;
+  font: inherit;
+  font-size: var(--sd-text-sm);
+  color: var(--sd-font-primary);
+  width: 100%;
+  transition: background 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease;
+}
+.control::placeholder {
+  color: var(--sd-font-light);
+  font-weight: 500;
+}
+.control:disabled {
+  background: var(--sd-bg-tertiary);
+  color: var(--sd-font-tertiary);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ---- variant: elevated (forms — flat gray fill, barely-visible border, zero shadow) ---- */
+.elevated {
+  background: var(--sd-bg-tertiary);
+  border-color: var(--sd-border-medium);
+  box-shadow: none;
+}
+.elevated:hover:not(:disabled):not(:focus) {
+  background: var(--sd-bg-quaternary);
+}
+.elevated:focus {
+  outline: none;
+  background: var(--sd-bg-tertiary);
+  border-color: var(--sd-accent);
+  box-shadow: none;
+}
+
+/* ---- variant: bare (right-panel inline field — transparent, reveals on hover/focus) ---- */
+.bare {
+  background: transparent;
+  border-color: transparent;
+}
+.bare:hover:not(:disabled):not(:focus) {
+  background: var(--sd-bg-tertiary);
+}
+.bare:focus {
+  outline: none;
+  background: var(--sd-bg-tertiary);
+  border-color: var(--sd-accent);
+  box-shadow: none;
+}
+
+/* ---- error (applies on top of either variant) ---- */
+.error {
+  border-color: var(--sd-danger);
+}
+.error:focus {
+  border-color: var(--sd-danger);
+  box-shadow: none;
+}
+
+.textarea {
+  min-height: 76px;
+  height: auto;
+  padding: 8px 10px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.iconWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.iconWrap svg {
+  position: absolute;
+  left: 9px;
+  color: var(--sd-font-tertiary);
+  pointer-events: none;
+}
+.iconWrap .control {
+  padding-left: 30px;
+}
+
+.hint {
+  font-size: var(--sd-text-xs);
+  color: var(--sd-font-tertiary);
+}
+.hintError {
+  color: var(--sd-danger-text);
+}

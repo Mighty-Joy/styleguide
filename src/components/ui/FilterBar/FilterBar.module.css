@@ -1,0 +1,181 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 44px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--sd-border-light);
+  background: var(--sd-bg-primary);
+  flex-shrink: 0;
+}
+
+/* ── Search ── */
+.searchWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 8px;
+  color: var(--sd-font-tertiary);
+  pointer-events: none;
+}
+
+.searchInput {
+  height: 30px;
+  padding: 0 28px 0 28px;
+  border: 1px solid var(--sd-border-light);
+  border-radius: var(--sd-radius-sm);
+  background: var(--sd-bg-secondary);
+  color: var(--sd-font-primary);
+  font-size: 13px;
+  font-family: var(--sd-font-stack);
+  min-width: 220px;
+  outline: none;
+  transition: border-color 0.1s, background 0.1s;
+}
+.searchInput::placeholder { color: var(--sd-font-tertiary); }
+.searchInput:focus {
+  border-color: var(--sd-border-strong);
+  background: var(--sd-bg-primary);
+  box-shadow: 0 0 0 2px var(--sd-bg-tertiary);
+}
+
+.clearBtn {
+  position: absolute;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  border: none;
+  background: transparent;
+  color: var(--sd-font-tertiary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--sd-radius-sm);
+  padding: 0;
+}
+.clearBtn:hover { background: var(--sd-bg-tertiary); color: var(--sd-font-primary); }
+
+/* ── Filter chips ── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: var(--sd-radius-pill);
+  background: var(--sd-bg-inverted);
+  color: var(--sd-font-inverted);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.chipRemove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+.chipRemove:hover { opacity: 1; background: rgba(255,255,255,0.15); }
+
+/* ── Sort ── */
+.sortWrap {
+  position: relative;
+}
+
+.sortBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--sd-border-light);
+  border-radius: var(--sd-radius-sm);
+  background: var(--sd-bg-primary);
+  color: var(--sd-font-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--sd-font-stack);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sortBtn:hover { background: var(--sd-bg-secondary); }
+
+.sortLabel { color: var(--sd-font-secondary); }
+
+.sortCaret {
+  color: var(--sd-font-tertiary);
+  transition: transform 0.15s;
+}
+.sortCaretOpen { transform: rotate(180deg); }
+
+.sortDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 160px;
+  background: var(--sd-bg-primary);
+  border: 1px solid var(--sd-border-light);
+  border-radius: var(--sd-radius-md);
+  box-shadow: var(--sd-shadow-medium);
+  padding: 4px;
+  z-index: 50;
+}
+
+.sortOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 32px;
+  padding: 0 10px;
+  border: none;
+  background: transparent;
+  color: var(--sd-font-secondary);
+  font-size: 13px;
+  font-family: var(--sd-font-stack);
+  cursor: pointer;
+  border-radius: var(--sd-radius-sm);
+  text-align: left;
+}
+.sortOption:hover { background: var(--sd-bg-secondary); color: var(--sd-font-primary); }
+.sortOptionActive { color: var(--sd-font-primary); font-weight: 600; }
+.sortCheck { color: var(--sd-font-primary); font-size: 12px; }
+
+/* ── View toggle ── */
+.viewToggle {
+  display: flex;
+  border: 1px solid var(--sd-border-light);
+  border-radius: var(--sd-radius-sm);
+  overflow: hidden;
+}
+
+.viewBtn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: var(--sd-bg-primary);
+  color: var(--sd-font-tertiary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.1s, color 0.1s;
+}
+.viewBtn + .viewBtn { border-left: 1px solid var(--sd-border-light); }
+.viewBtn:hover { background: var(--sd-bg-secondary); color: var(--sd-font-primary); }
+.viewBtnActive { background: var(--sd-bg-secondary); color: var(--sd-font-primary); }

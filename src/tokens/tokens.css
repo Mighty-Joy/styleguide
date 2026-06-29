@@ -1,0 +1,147 @@
+/* =============================================================================
+ * Superdeal Design Tokens — the single source of truth.
+ *
+ * These are the SAME values that live (scoped under `.root`) in the original
+ * styleGuide.module.css, promoted to global `:root` custom properties under the
+ * `--sd-*` namespace that the app components already expect
+ * (e.g. --sd-bg-tertiary, --sd-radius-pill). Both the design-system catalog and
+ * every re-authored component read from here, so there is ONE token vocabulary
+ * shared with apps/web. Change a value once; everything follows.
+ *
+ * Lifted from twenty-ui theme constants (GRAY_SCALE_LIGHT, brand green ramp,
+ * BORDER/FONT/SHADOW _LIGHT, radii, type scale).
+ * ========================================================================== */
+
+:root {
+  /* ---- Gray scale (GRAY_SCALE_LIGHT, display-p3 → sRGB) ---- */
+  --sd-gray-1: #ffffff;
+  --sd-gray-2: #fcfcfc;
+  --sd-gray-3: #f9f9f9;
+  --sd-gray-4: #f1f1f1;
+  --sd-gray-5: #ebebeb;
+  --sd-gray-6: #d6d6d6;
+  --sd-gray-7: #cccccc;
+  --sd-gray-8: #b3b3b3;
+  --sd-gray-9: #999999;
+  --sd-gray-10: #838383;
+  --sd-gray-11: #666666;
+  --sd-gray-12: #333333;
+
+  /* ---- Accent: Superdeal green ramp (brand #36d080 = green-9) ---- */
+  --sd-green-1: #f2fdf8;
+  --sd-green-2: #e6fbf0;
+  --sd-green-3: #d2f7e4;
+  --sd-green-4: #b6f0d2;
+  --sd-green-5: #93e7bc;
+  --sd-green-6: #6bdca4;
+  --sd-green-7: #45d28d;
+  --sd-green-8: #3ed086;
+  --sd-green-9: #36d080;
+  --sd-green-10: #2bb56e;
+  --sd-green-11: #1c9159;
+  --sd-green-12: #0c5132;
+
+  /* ---- Semantic: background ---- */
+  --sd-bg-primary: var(--sd-gray-1);
+  --sd-bg-secondary: var(--sd-gray-2);
+  --sd-bg-tertiary: var(--sd-gray-4);
+  --sd-bg-quaternary: var(--sd-gray-5);
+  --sd-bg-inverted: var(--sd-gray-12);
+
+  /* ---- Semantic: font ---- */
+  --sd-font-primary: var(--sd-gray-12);
+  --sd-font-secondary: var(--sd-gray-11);
+  --sd-font-tertiary: var(--sd-gray-9);
+  --sd-font-light: var(--sd-gray-8);
+  --sd-font-inverted: var(--sd-gray-1);
+
+  /* ---- Semantic: border ---- */
+  --sd-border-strong: var(--sd-gray-6);
+  --sd-border-medium: var(--sd-gray-5);
+  --sd-border-light: var(--sd-gray-4);
+  --sd-border-green: var(--sd-green-7);
+
+  /* ---- Semantic: accent ---- */
+  --sd-accent: var(--sd-green-9);
+  --sd-accent-hover: var(--sd-green-10);
+  --sd-accent-active: var(--sd-green-11);
+  --sd-accent-tint: var(--sd-green-4);
+  --sd-accent-tint-2: var(--sd-green-3);
+  /* darker green for text/links (legible on white; the bright brand green is not) */
+  --sd-link: var(--sd-green-11);
+  --sd-on-accent: #04331e; /* near-black green — text on the bright accent fill */
+
+  /* ---- Semantic: danger (destructive actions, input errors) ---- */
+  --sd-danger: #e5484d;
+  --sd-danger-text: #ce2c31;
+  --sd-danger-border: #f3aeaf;
+  --sd-danger-bg: #fff0f0;
+  --sd-danger-tint: #ffe5e5;
+
+  /* ---- Two-tone palette (MAIN_COLORS_LIGHT) ----
+     10 families, each a triplet:
+       · solid — chart series, avatar fills, the tag dot
+       · tint  — tag / status-pill background
+       · text  — tag / status-pill label (legible on its own tint)
+     Tags use tint + text; charts and dots use solid. */
+  --sd-tone-green-solid: #36d080;  --sd-tone-green-tint: #d2f7e4;  --sd-tone-green-text: #1c9159;
+  --sd-tone-blue-solid: #3e63dd;   --sd-tone-blue-tint: #edf2fe;   --sd-tone-blue-text: #3a5bc7;
+  --sd-tone-turquoise-solid: #12a594; --sd-tone-turquoise-tint: #e0f8f3; --sd-tone-turquoise-text: #008573;
+  --sd-tone-sky-solid: #7ce2fe;    --sd-tone-sky-tint: #e1f6fd;    --sd-tone-sky-text: #00749e;
+  --sd-tone-red-solid: #e5484d;    --sd-tone-red-tint: #ffefef;    --sd-tone-red-text: #ce2c31;
+  --sd-tone-orange-solid: #f76b15; --sd-tone-orange-tint: #ffefd6; --sd-tone-orange-text: #cc4e00;
+  --sd-tone-yellow-solid: #ffe629; --sd-tone-yellow-tint: #fffab8; --sd-tone-yellow-text: #9e6c00;
+  --sd-tone-purple-solid: #8e4ec6; --sd-tone-purple-tint: #f7edfe; --sd-tone-purple-text: #8347b9;
+  --sd-tone-pink-solid: #d6409f;   --sd-tone-pink-tint: #fee9f5;   --sd-tone-pink-text: #cd1d8d;
+  --sd-tone-gray-solid: #999999;   --sd-tone-gray-tint: #f1f1f1;   --sd-tone-gray-text: #666666;
+
+  /* ---- Radii (BORDER_COMMON.radius) ---- */
+  --sd-radius-xs: 2px;
+  --sd-radius-sm: 4px;
+  --sd-radius-md: 8px;
+  --sd-radius-xl: 20px;
+  --sd-radius-pill: 999px;
+
+  /* ---- Shadows (BOX_SHADOW_LIGHT, gray-alpha) ---- */
+  --sd-shadow-light: 0px 2px 4px 0px rgba(0, 0, 0, 0.039),
+    0px 0px 4px 0px rgba(0, 0, 0, 0.078);
+  --sd-shadow-strong: 2px 4px 16px 0px rgba(0, 0, 0, 0.161),
+    0px 2px 4px 0px rgba(0, 0, 0, 0.078);
+
+  /* ---- Type scale — verbatim from twenty-ui FONT_COMMON.size ---- */
+  --sd-text-xxs: 0.625rem; /* 10px */
+  --sd-text-xs: 0.85rem; /* ~13.6px */
+  --sd-text-sm: 0.92rem; /* ~14.7px */
+  --sd-text-md: 1rem; /* 16px */
+  --sd-text-lg: 1.23rem; /* ~19.7px */
+  --sd-text-xl: 1.54rem; /* ~24.6px */
+  --sd-text-xxl: 1.85rem; /* ~29.6px */
+
+  /* ---- Font family + weights (FONT_COMMON) ---- */
+  --sd-font-stack: "Inter", sans-serif;
+  --sd-font-weight-regular: 400;
+  --sd-font-weight-medium: 500;
+  --sd-font-weight-semibold: 600;
+
+  /* ---- Spacing scale (4px base) ---- */
+  --sd-space-1: 4px;
+  --sd-space-2: 8px;
+  --sd-space-3: 12px;
+  --sd-space-4: 16px;
+  --sd-space-5: 24px;
+  --sd-space-6: 32px;
+
+  /* ---- Component-level aliases ----
+     Names a few app components reference directly. Kept as aliases (not new
+     values) so the vocabulary stays single-sourced. */
+  --sd-muted-text: var(--sd-font-secondary);
+  --sd-hover-background: var(--sd-bg-tertiary);
+  --sd-creator-handle: var(--sd-link);
+
+  /* Bare aliases for components ported verbatim from apps/web, whose CSS still
+     references the un-namespaced names. Point them at the canonical tokens so
+     there is still only one source of truth. */
+  --muted-text: var(--sd-muted-text);
+  --hover-background: var(--sd-hover-background);
+  --creator-handle: var(--sd-creator-handle);
+}

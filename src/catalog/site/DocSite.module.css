@@ -1,0 +1,346 @@
+/* Design-system documentation site chrome — modeled on Mantine / MUI docs:
+   fixed left sidebar, centered readable content column, live demo canvases,
+   props tables. All colors come from the canonical --sd-* token layer. */
+
+.shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--sd-bg-primary);
+  color: var(--sd-font-primary);
+  font-family: var(--sd-font-family, "Inter", system-ui, sans-serif);
+  letter-spacing: -0.01em;
+}
+
+/* The scrollable area to the right of the persistent menu. Positioned so the
+   full-bleed Foundations page (position:absolute; inset:0) fills it rather than
+   the viewport. Doc pages add their own centered column via the catalog layout. */
+.mainScroll {
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* ---------------- Sidebar ---------------- */
+.sidebar {
+  width: 274px;
+  flex-shrink: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid var(--sd-border-light);
+  background: var(--sd-bg-secondary);
+  padding: 20px 14px 40px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px 18px;
+  text-decoration: none;
+  color: inherit;
+}
+.brandMark {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--sd-accent);
+  display: grid;
+  place-content: center;
+  color: var(--sd-on-accent);
+  font-weight: 800;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.brandTitle {
+  font-weight: 700;
+  font-size: 14px;
+}
+.brandSub {
+  font-size: 11px;
+  color: var(--sd-font-tertiary);
+}
+
+.navGroup {
+  margin-top: 18px;
+}
+.navGroupLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sd-font-tertiary);
+  padding: 0 8px 6px;
+}
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--sd-radius-sm);
+  text-decoration: none;
+  color: var(--sd-font-secondary);
+  font-size: 13.5px;
+  line-height: 1.3;
+}
+.navLink:hover {
+  background: var(--sd-bg-tertiary);
+  color: var(--sd-font-primary);
+}
+.navLinkActive {
+  background: var(--sd-accent-tint-2);
+  color: var(--sd-accent-active);
+  font-weight: 600;
+}
+.navLinkPlanned {
+  color: var(--sd-font-light);
+}
+
+/* ---------------- Content column ---------------- */
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 44px 48px 120px;
+}
+.content {
+  width: 100%;
+  max-width: 860px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sd-accent-active);
+  margin: 0 0 8px;
+}
+.pageTitle {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+.pageSummary {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--sd-font-secondary);
+  margin: 0 0 18px;
+}
+.pageDescription {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--sd-font-secondary);
+  margin: 0 0 8px;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0 8px;
+}
+.source {
+  font-size: 12.5px;
+  color: var(--sd-font-tertiary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--sd-bg-tertiary);
+  border-radius: var(--sd-radius-sm);
+  padding: 3px 8px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sd-font-tertiary);
+  margin: 40px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--sd-border-light);
+}
+
+/* ---------------- Demo block ---------------- */
+.demo {
+  margin: 26px 0;
+}
+.demoHead {
+  margin-bottom: 12px;
+}
+.demoTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.demoDesc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--sd-font-secondary);
+  margin: 0;
+}
+.canvas {
+  border: 1px solid var(--sd-border-medium);
+  border-radius: var(--sd-radius-md);
+  background: var(--sd-bg-primary);
+  background-image: radial-gradient(
+    var(--sd-border-light) 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
+  padding: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+.canvasPlain {
+  background-image: none;
+}
+.canvasBlock {
+  display: block;
+}
+
+/* ---------------- Props table ---------------- */
+.propsTitle {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 22px 0 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--sd-font-primary);
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--sd-font-tertiary);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--sd-border-medium);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--sd-border-light);
+  vertical-align: top;
+}
+.propName {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+  color: var(--sd-font-primary);
+  white-space: nowrap;
+}
+.required {
+  color: #d6336c;
+  margin-left: 2px;
+}
+.propType {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--sd-accent-active);
+  font-size: 12.5px;
+}
+.propDefault {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--sd-font-tertiary);
+  font-size: 12.5px;
+}
+.propDesc {
+  color: var(--sd-font-secondary);
+  line-height: 1.5;
+}
+
+/* ---------------- Status badge ---------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 9px;
+  border-radius: var(--sd-radius-pill);
+}
+.badgeStable {
+  background: var(--sd-accent-tint-2);
+  color: var(--sd-accent-active);
+}
+.badgeWip {
+  background: #fff4e0;
+  color: #b76a00;
+}
+.badgePlanned {
+  background: var(--sd-bg-tertiary);
+  color: var(--sd-font-tertiary);
+}
+.badgeDot {
+  font-size: 11px;
+}
+
+/* ---------------- Overview landing ---------------- */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--sd-border-light);
+  border-radius: var(--sd-radius-md);
+  padding: 18px;
+  transition: border-color 0.1s ease, box-shadow 0.1s ease;
+}
+.card:hover {
+  border-color: var(--sd-border-strong);
+  box-shadow: var(--sd-shadow-light);
+}
+.cardTitle {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.cardSummary {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--sd-font-secondary);
+  margin: 0;
+}
+
+.comingSoon {
+  margin-top: 28px;
+  border: 1px dashed var(--sd-border-strong);
+  border-radius: var(--sd-radius-md);
+  padding: 32px;
+  text-align: center;
+  color: var(--sd-font-tertiary);
+  font-size: 14px;
+}
+
+@media (max-width: 860px) {
+  .sidebar {
+    display: none;
+  }
+  .main {
+    padding: 28px 20px 80px;
+  }
+}

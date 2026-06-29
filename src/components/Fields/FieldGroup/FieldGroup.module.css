@@ -1,0 +1,35 @@
+.group {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 6px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--sd-radius-sm);
+}
+.header:hover {
+  background: var(--sd-bg-secondary);
+}
+
+.label {
+  font-size: var(--sd-text-sm);
+  font-weight: 600;
+  color: var(--sd-font-secondary);
+}
+
+.chevron {
+  display: flex;
+  color: var(--sd-font-tertiary);
+  flex-shrink: 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 0 10px;
+}

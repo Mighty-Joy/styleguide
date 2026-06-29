@@ -1,0 +1,125 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 280px;
+  width: 100%;
+}
+
+.label {
+  font-size: var(--sd-text-xs);
+  font-weight: 500;
+  color: var(--sd-font-light);
+}
+
+.hint {
+  font-size: var(--sd-text-xs);
+  color: var(--sd-font-tertiary);
+}
+
+.root {
+  position: relative;
+  width: 100%;
+}
+
+/* trigger — mirrors the elevated Input look exactly */
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: var(--sd-radius-sm);
+  border: 1px solid var(--sd-border-medium);
+  background: var(--sd-bg-tertiary);
+  box-shadow: none;
+  font: inherit;
+  font-size: var(--sd-text-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s ease, border-color 0.1s ease;
+}
+.trigger:hover:not(:disabled) {
+  background: var(--sd-bg-quaternary);
+}
+.trigger:disabled {
+  background: var(--sd-bg-tertiary);
+  color: var(--sd-font-tertiary);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.triggerOpen {
+  border-color: var(--sd-accent);
+  outline: none;
+}
+
+.value {
+  color: var(--sd-font-primary);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.placeholder {
+  color: var(--sd-font-light);
+  flex: 1;
+  font-weight: 500;
+}
+
+.chevron {
+  color: var(--sd-font-tertiary);
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* dropdown */
+.menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  background: var(--sd-bg-primary);
+  border: 1px solid var(--sd-border-light);
+  border-radius: var(--sd-radius-sm);
+  box-shadow: var(--sd-shadow-strong);
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: var(--sd-radius-xs);
+  font-size: var(--sd-text-sm);
+  color: var(--sd-font-primary);
+  cursor: pointer;
+}
+.option:hover {
+  background: var(--sd-bg-tertiary);
+}
+
+.optCheck {
+  width: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  color: var(--sd-accent);
+}
+
+.optionSelected {
+  color: var(--sd-font-primary);
+  font-weight: 500;
+}

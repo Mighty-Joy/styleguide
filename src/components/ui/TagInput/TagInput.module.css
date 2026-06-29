@@ -1,0 +1,118 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.label {
+  font-size: var(--sd-text-xs);
+  font-weight: 500;
+  color: var(--sd-font-light);
+}
+
+.hint {
+  font-size: var(--sd-text-xs);
+  color: var(--sd-font-tertiary);
+}
+
+.hintError {
+  color: var(--sd-danger-text);
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+  min-height: 36px;
+  padding: 4px 8px;
+  border-radius: var(--sd-radius-sm);
+  border: 1px solid var(--sd-border-medium);
+  background: var(--sd-bg-tertiary);
+  cursor: text;
+  transition: border-color 0.1s ease, background 0.1s ease;
+}
+
+.container:hover:not(.disabled) {
+  background: var(--sd-bg-quaternary);
+}
+
+.container.focused {
+  border-color: var(--sd-accent);
+  background: var(--sd-bg-tertiary);
+}
+
+.container.error {
+  border-color: var(--sd-danger);
+}
+
+.container.disabled {
+  background: var(--sd-bg-tertiary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px 2px 10px;
+  border-radius: var(--sd-radius-full);
+  background: var(--sd-bg-secondary);
+  border: 1px solid var(--sd-border-light);
+  font-size: var(--sd-text-xs);
+  font-weight: 500;
+  color: var(--sd-font-primary);
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.tagLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tagRemove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--sd-font-tertiary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.1s, color 0.1s;
+}
+
+.tagRemove:hover {
+  background: var(--sd-bg-tertiary);
+  color: var(--sd-font-primary);
+}
+
+.input {
+  flex: 1;
+  min-width: 80px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: var(--sd-text-sm);
+  color: var(--sd-font-primary);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--sd-font-light);
+  font-weight: 500;
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}

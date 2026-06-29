@@ -1,0 +1,120 @@
+.display {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: text;
+  border-radius: var(--sd-radius-sm);
+  padding: 2px 4px;
+  transition: background 0.1s;
+  min-height: 24px;
+  max-width: 100%;
+}
+
+.display:hover {
+  background: var(--sd-bg-secondary);
+}
+
+.display:hover .pencil {
+  opacity: 1;
+}
+
+.disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.disabled:hover {
+  background: none;
+}
+
+.displayText {
+  flex: 1;
+  color: var(--sd-font-primary);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.placeholder {
+  color: var(--sd-font-tertiary);
+  font-style: italic;
+}
+
+.pencil {
+  opacity: 0;
+  color: var(--sd-font-tertiary);
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+
+.editWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.editRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.input {
+  flex: 1;
+  font-family: inherit;
+  color: var(--sd-font-primary);
+  background: var(--sd-bg-primary);
+  border: 1.5px solid var(--sd-border-focus, #000);
+  border-radius: var(--sd-radius-sm);
+  padding: 3px 6px;
+  line-height: 1.4;
+  outline: none;
+  min-width: 0;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+
+.input:focus {
+  border-color: var(--sd-bg-inverted);
+}
+
+.actions {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--sd-radius-sm);
+  border: 1px solid var(--sd-border-light);
+  background: var(--sd-bg-primary);
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+  color: var(--sd-font-secondary);
+}
+
+.actionBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.saveBtn:not(:disabled):hover {
+  background: var(--sd-bg-inverted);
+  color: #fff;
+  border-color: var(--sd-bg-inverted);
+}
+
+.cancelBtn:hover {
+  background: var(--sd-bg-tertiary);
+}
+
+.error {
+  font-size: 11px;
+  color: #dc2626;
+  padding-left: 4px;
+}

@@ -1,0 +1,94 @@
+/* ---- segment variant (pill container, iOS-style) ---- */
+.segment {
+  display: inline-flex;
+  align-items: center;
+  background: var(--sd-bg-tertiary);
+  border-radius: var(--sd-radius-pill);
+  padding: 3px;
+  gap: 2px;
+}
+
+.segment .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 26px;
+  padding: 0 14px;
+  border-radius: var(--sd-radius-pill);
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: var(--sd-text-sm);
+  font-weight: 500;
+  color: var(--sd-font-tertiary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.12s ease, color 0.12s ease, box-shadow 0.12s ease;
+}
+.segment .item:hover:not(.active) {
+  color: var(--sd-font-secondary);
+}
+.segment .active {
+  background: var(--sd-bg-primary);
+  color: var(--sd-font-primary);
+  box-shadow: var(--sd-shadow-light);
+}
+
+/* ---- button variant (bordered button group) ---- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--sd-border-medium);
+  border-radius: var(--sd-radius-sm);
+  overflow: hidden;
+  background: var(--sd-bg-primary);
+  box-shadow: var(--sd-shadow-light);
+}
+
+.button .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 32px;
+  padding: 0 14px;
+  border: none;
+  border-right: 1px solid var(--sd-border-light);
+  background: transparent;
+  font: inherit;
+  font-size: var(--sd-text-sm);
+  font-weight: 500;
+  color: var(--sd-font-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+.button .item:last-child {
+  border-right: none;
+}
+.button .item:hover:not(.active) {
+  background: var(--sd-bg-tertiary);
+  color: var(--sd-font-primary);
+}
+.button .active {
+  background: var(--sd-bg-tertiary);
+  color: var(--sd-font-primary);
+}
+
+/* ---- sm modifier ---- */
+.sm .item {
+  height: 24px;
+  padding: 0 10px;
+  font-size: var(--sd-text-xs);
+}
+.segment.sm {
+  padding: 2px;
+}
+.segment.sm .item {
+  height: 22px;
+  padding: 0 10px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}

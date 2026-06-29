@@ -1,0 +1,78 @@
+.row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 1px 6px;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--sd-font-tertiary);
+  font-size: var(--sd-text-sm);
+  min-width: 0;
+}
+.keyIcon {
+  display: flex;
+  flex-shrink: 0;
+  color: var(--sd-font-tertiary);
+}
+.keyLabel {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.valueWrap {
+  position: relative;
+  min-width: 0;
+}
+
+.value {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 4px 8px;
+  border-radius: var(--sd-radius-sm);
+  font: inherit;
+  font-size: var(--sd-text-sm);
+  color: var(--sd-font-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+button.value {
+  cursor: text;
+}
+button.value:hover {
+  background: var(--sd-bg-tertiary);
+}
+.value:disabled {
+  cursor: default;
+}
+.empty {
+  color: var(--sd-font-light);
+}
+
+/* The floating "open editor" — Twenty's OverlayContainer treatment:
+   light border, sm radius, strong drop shadow. Inner editors are transparent. */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  min-width: 100%;
+  border: 1px solid var(--sd-border-medium);
+  border-radius: var(--sd-radius-sm);
+  background: var(--sd-bg-primary);
+  box-shadow: var(--sd-shadow-strong);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 20;
+}
