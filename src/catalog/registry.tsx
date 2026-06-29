@@ -175,6 +175,8 @@ import creatorInsightsPanel from "@/catalog/examples/CreatorInsightsPanel.doc";
 import brandVerification from "@/catalog/examples/BrandVerification.doc";
 import campaignSpendTracker from "@/catalog/examples/CampaignSpendTracker.doc";
 import contentBriefChecklist from "@/catalog/examples/ContentBriefChecklist.doc";
+import creatorStatusCard from "@/catalog/examples/CreatorStatusCard.doc";
+import campaignHashtagTracker from "@/catalog/examples/CampaignHashtagTracker.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -353,6 +355,8 @@ export const DOCS: ComponentDoc[] = [
   brandVerification,
   campaignSpendTracker,
   contentBriefChecklist,
+  creatorStatusCard,
+  campaignHashtagTracker,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -565,6 +569,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       brandVerification,
       campaignSpendTracker,
       contentBriefChecklist,
+      creatorStatusCard,
+      campaignHashtagTracker,
     ],
   },
 ];
