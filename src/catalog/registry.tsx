@@ -121,6 +121,8 @@ import contentSubmissionForm from "@/catalog/examples/ContentSubmissionForm.doc"
 import revisionRequestPanel from "@/catalog/examples/RevisionRequestPanel.doc";
 import campaignRoiSummary from "@/catalog/examples/CampaignROISummary.doc";
 import productSeedingTracker from "@/catalog/examples/ProductSeedingTracker.doc";
+import campaignPlanningBoard from "@/catalog/examples/CampaignPlanningBoard.doc";
+import outreachSequenceBuilder from "@/catalog/examples/OutreachSequenceBuilder.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -245,6 +247,8 @@ export const DOCS: ComponentDoc[] = [
   revisionRequestPanel,
   campaignRoiSummary,
   productSeedingTracker,
+  campaignPlanningBoard,
+  outreachSequenceBuilder,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -403,6 +407,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       revisionRequestPanel,
       campaignRoiSummary,
       productSeedingTracker,
+      campaignPlanningBoard,
+      outreachSequenceBuilder,
     ],
   },
 ];
