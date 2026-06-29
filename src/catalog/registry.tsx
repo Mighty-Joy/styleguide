@@ -179,6 +179,8 @@ import creatorStatusCard from "@/catalog/examples/CreatorStatusCard.doc";
 import campaignHashtagTracker from "@/catalog/examples/CampaignHashtagTracker.doc";
 import campaignDeliverableMatrix from "@/catalog/examples/CampaignDeliverableMatrix.doc";
 import campaignExitSurvey from "@/catalog/examples/CampaignExitSurvey.doc";
+import campaignCreatorLeaderboard from "@/catalog/examples/CampaignCreatorLeaderboard.doc";
+import brandMessageBlast from "@/catalog/examples/BrandMessageBlast.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -361,6 +363,8 @@ export const DOCS: ComponentDoc[] = [
   campaignHashtagTracker,
   campaignDeliverableMatrix,
   campaignExitSurvey,
+  campaignCreatorLeaderboard,
+  brandMessageBlast,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -577,6 +581,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignHashtagTracker,
       campaignDeliverableMatrix,
       campaignExitSurvey,
+      campaignCreatorLeaderboard,
+      brandMessageBlast,
     ],
   },
 ];
