@@ -153,6 +153,8 @@ import creatorMediaKit from "@/catalog/examples/CreatorMediaKit.doc";
 import teamMemberManagement from "@/catalog/examples/TeamMemberManagement.doc";
 import brandSafetyReport from "@/catalog/examples/BrandSafetyReport.doc";
 import integrationSettings from "@/catalog/examples/IntegrationSettings.doc";
+import campaignNegotiationThread from "@/catalog/examples/CampaignNegotiationThread.doc";
+import productCatalogPicker from "@/catalog/examples/ProductCatalogPicker.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -309,6 +311,8 @@ export const DOCS: ComponentDoc[] = [
   teamMemberManagement,
   brandSafetyReport,
   integrationSettings,
+  campaignNegotiationThread,
+  productCatalogPicker,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -499,6 +503,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       teamMemberManagement,
       brandSafetyReport,
       integrationSettings,
+      campaignNegotiationThread,
+      productCatalogPicker,
     ],
   },
 ];
