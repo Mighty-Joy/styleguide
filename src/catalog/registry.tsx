@@ -151,6 +151,8 @@ import creatorDealHistory from "@/catalog/examples/CreatorDealHistory.doc";
 import campaignTemplateLibrary from "@/catalog/examples/CampaignTemplateLibrary.doc";
 import creatorMediaKit from "@/catalog/examples/CreatorMediaKit.doc";
 import teamMemberManagement from "@/catalog/examples/TeamMemberManagement.doc";
+import brandSafetyReport from "@/catalog/examples/BrandSafetyReport.doc";
+import integrationSettings from "@/catalog/examples/IntegrationSettings.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -305,6 +307,8 @@ export const DOCS: ComponentDoc[] = [
   campaignTemplateLibrary,
   creatorMediaKit,
   teamMemberManagement,
+  brandSafetyReport,
+  integrationSettings,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -493,6 +497,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignTemplateLibrary,
       creatorMediaKit,
       teamMemberManagement,
+      brandSafetyReport,
+      integrationSettings,
     ],
   },
 ];
