@@ -159,6 +159,8 @@ import creatorAvailabilityCalendar from "@/catalog/examples/CreatorAvailabilityC
 import discoveryFiltersPanel from "@/catalog/examples/DiscoveryFiltersPanel.doc";
 import campaignContentScheduler from "@/catalog/examples/CampaignContentScheduler.doc";
 import brandKitManager from "@/catalog/examples/BrandKitManager.doc";
+import creatorPayoutWallet from "@/catalog/examples/CreatorPayoutWallet.doc";
+import campaignMultiplatformBreakdown from "@/catalog/examples/CampaignMultiplatformBreakdown.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -321,6 +323,8 @@ export const DOCS: ComponentDoc[] = [
   discoveryFiltersPanel,
   campaignContentScheduler,
   brandKitManager,
+  creatorPayoutWallet,
+  campaignMultiplatformBreakdown,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -517,6 +521,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       discoveryFiltersPanel,
       campaignContentScheduler,
       brandKitManager,
+      creatorPayoutWallet,
+      campaignMultiplatformBreakdown,
     ],
   },
 ];
