@@ -147,6 +147,8 @@ import brandCreatorRoster from "@/catalog/examples/BrandCreatorRoster.doc";
 import campaignInvitePreview from "@/catalog/examples/CampaignInvitePreview.doc";
 import campaignContentFeed from "@/catalog/examples/CampaignContentFeed.doc";
 import paymentBatchApprover from "@/catalog/examples/PaymentBatchApprover.doc";
+import creatorDealHistory from "@/catalog/examples/CreatorDealHistory.doc";
+import campaignTemplateLibrary from "@/catalog/examples/CampaignTemplateLibrary.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -297,6 +299,8 @@ export const DOCS: ComponentDoc[] = [
   campaignInvitePreview,
   campaignContentFeed,
   paymentBatchApprover,
+  creatorDealHistory,
+  campaignTemplateLibrary,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -481,6 +485,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignInvitePreview,
       campaignContentFeed,
       paymentBatchApprover,
+      creatorDealHistory,
+      campaignTemplateLibrary,
     ],
   },
 ];
