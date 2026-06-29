@@ -101,6 +101,9 @@ import keyValueList from "@/components/ui/KeyValueList/KeyValueList.doc";
 import contentCard from "@/catalog/examples/ContentCard.doc";
 import deliverableTracker from "@/catalog/examples/DeliverableTracker.doc";
 import postPerformance from "@/catalog/examples/PostPerformance.doc";
+import dealPipeline from "@/catalog/examples/DealPipeline.doc";
+import productSeeding from "@/catalog/examples/ProductSeeding.doc";
+import campaignSetup from "@/catalog/examples/CampaignSetup.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -205,6 +208,9 @@ export const DOCS: ComponentDoc[] = [
   contentCard,
   deliverableTracker,
   postPerformance,
+  dealPipeline,
+  productSeeding,
+  campaignSetup,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -345,6 +351,9 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       settingsPage,
       deliverableTracker,
       postPerformance,
+      dealPipeline,
+      productSeeding,
+      campaignSetup,
     ],
   },
 ];
