@@ -171,6 +171,8 @@ import creatorGoalSetting from "@/catalog/examples/CreatorGoalSetting.doc";
 import campaignFeedback from "@/catalog/examples/CampaignFeedback.doc";
 import campaignBudgetApproval from "@/catalog/examples/CampaignBudgetApproval.doc";
 import creatorReferralProgram from "@/catalog/examples/CreatorReferralProgram.doc";
+import creatorInsightsPanel from "@/catalog/examples/CreatorInsightsPanel.doc";
+import brandVerification from "@/catalog/examples/BrandVerification.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -345,6 +347,8 @@ export const DOCS: ComponentDoc[] = [
   campaignFeedback,
   campaignBudgetApproval,
   creatorReferralProgram,
+  creatorInsightsPanel,
+  brandVerification,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -553,6 +557,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignFeedback,
       campaignBudgetApproval,
       creatorReferralProgram,
+      creatorInsightsPanel,
+      brandVerification,
     ],
   },
 ];
