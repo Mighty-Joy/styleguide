@@ -129,6 +129,8 @@ import creatorApplicationReview from "@/catalog/examples/CreatorApplicationRevie
 import campaignBriefBuilder from "@/catalog/examples/CampaignBriefBuilder.doc";
 import welcomeDashboard from "@/catalog/examples/WelcomeDashboard.doc";
 import contentPerformanceHeatmap from "@/catalog/examples/ContentPerformanceHeatmap.doc";
+import creatorPortfolioView from "@/catalog/examples/CreatorPortfolioView.doc";
+import campaignComparisonTable from "@/catalog/examples/CampaignComparisonTable.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -261,6 +263,8 @@ export const DOCS: ComponentDoc[] = [
   campaignBriefBuilder,
   welcomeDashboard,
   contentPerformanceHeatmap,
+  creatorPortfolioView,
+  campaignComparisonTable,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -427,6 +431,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignBriefBuilder,
       welcomeDashboard,
       contentPerformanceHeatmap,
+      creatorPortfolioView,
+      campaignComparisonTable,
     ],
   },
 ];
