@@ -167,6 +167,8 @@ import campaignSpotlight from "@/catalog/examples/CampaignSpotlight.doc";
 import contentRevisionHistory from "@/catalog/examples/ContentRevisionHistory.doc";
 import creatorApplicationTracker from "@/catalog/examples/CreatorApplicationTracker.doc";
 import campaignQnABoard from "@/catalog/examples/CampaignQnABoard.doc";
+import creatorGoalSetting from "@/catalog/examples/CreatorGoalSetting.doc";
+import campaignFeedback from "@/catalog/examples/CampaignFeedback.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -337,6 +339,8 @@ export const DOCS: ComponentDoc[] = [
   contentRevisionHistory,
   creatorApplicationTracker,
   campaignQnABoard,
+  creatorGoalSetting,
+  campaignFeedback,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -541,6 +545,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       contentRevisionHistory,
       creatorApplicationTracker,
       campaignQnABoard,
+      creatorGoalSetting,
+      campaignFeedback,
     ],
   },
 ];
