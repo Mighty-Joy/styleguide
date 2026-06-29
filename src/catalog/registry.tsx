@@ -123,6 +123,8 @@ import campaignRoiSummary from "@/catalog/examples/CampaignROISummary.doc";
 import productSeedingTracker from "@/catalog/examples/ProductSeedingTracker.doc";
 import campaignPlanningBoard from "@/catalog/examples/CampaignPlanningBoard.doc";
 import outreachSequenceBuilder from "@/catalog/examples/OutreachSequenceBuilder.doc";
+import creatorEarningsOverview from "@/catalog/examples/CreatorEarningsOverview.doc";
+import partnershipAgreementViewer from "@/catalog/examples/PartnershipAgreementViewer.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -249,6 +251,8 @@ export const DOCS: ComponentDoc[] = [
   productSeedingTracker,
   campaignPlanningBoard,
   outreachSequenceBuilder,
+  creatorEarningsOverview,
+  partnershipAgreementViewer,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -409,6 +413,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       productSeedingTracker,
       campaignPlanningBoard,
       outreachSequenceBuilder,
+      creatorEarningsOverview,
+      partnershipAgreementViewer,
     ],
   },
 ];
