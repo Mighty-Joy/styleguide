@@ -181,6 +181,8 @@ import campaignDeliverableMatrix from "@/catalog/examples/CampaignDeliverableMat
 import campaignExitSurvey from "@/catalog/examples/CampaignExitSurvey.doc";
 import campaignCreatorLeaderboard from "@/catalog/examples/CampaignCreatorLeaderboard.doc";
 import brandMessageBlast from "@/catalog/examples/BrandMessageBlast.doc";
+import campaignReachEstimator from "@/catalog/examples/CampaignReachEstimator.doc";
+import creatorEarningsCalculator from "@/catalog/examples/CreatorEarningsCalculator.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -365,6 +367,8 @@ export const DOCS: ComponentDoc[] = [
   campaignExitSurvey,
   campaignCreatorLeaderboard,
   brandMessageBlast,
+  campaignReachEstimator,
+  creatorEarningsCalculator,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -583,6 +587,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignExitSurvey,
       campaignCreatorLeaderboard,
       brandMessageBlast,
+      campaignReachEstimator,
+      creatorEarningsCalculator,
     ],
   },
 ];
