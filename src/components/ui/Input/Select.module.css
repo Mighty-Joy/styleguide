@@ -51,7 +51,6 @@
   box-shadow: none;
 }
 .triggerOpen {
-  border-color: rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
   outline: none;
 }
