@@ -31,7 +31,7 @@
   width: 100%;
   height: 32px;
   padding: 0 10px;
-  border-radius: var(--sd-radius-sm);
+  border-radius: var(--sd-radius-md);
   border: 1px solid var(--sd-border-medium);
   background: var(--sd-bg-tertiary);
   box-shadow: none;
@@ -51,7 +51,8 @@
   box-shadow: none;
 }
 .triggerOpen {
-  border-color: var(--sd-accent);
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.08);
   outline: none;
 }
 
@@ -90,7 +91,7 @@
   padding: 4px;
   background: var(--sd-bg-primary);
   border: 1px solid var(--sd-border-light);
-  border-radius: var(--sd-radius-sm);
+  border-radius: var(--sd-radius-md);
   box-shadow: var(--sd-shadow-strong);
   max-height: 220px;
   overflow-y: auto;

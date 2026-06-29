@@ -65,7 +65,7 @@
   color: var(--sd-font-primary);
   background: var(--sd-bg-primary);
   border: 1.5px solid var(--sd-border-focus, #000);
-  border-radius: var(--sd-radius-sm);
+  border-radius: var(--sd-radius-md);
   padding: 3px 6px;
   line-height: 1.4;
   outline: none;

@@ -23,7 +23,7 @@
 .wrapper {
   display: flex;
   align-items: center;
-  border-radius: var(--sd-radius-sm);
+  border-radius: var(--sd-radius-md);
   border: 1px solid var(--sd-border-medium);
   background: var(--sd-bg-tertiary);
   overflow: hidden;
@@ -36,8 +36,9 @@
 }
 
 .wrapper.focused {
-  border-color: var(--sd-accent);
+  border-color: rgba(0, 0, 0, 0.2);
   background: var(--sd-bg-tertiary);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .wrapper.error {
