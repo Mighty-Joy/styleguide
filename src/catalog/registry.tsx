@@ -119,6 +119,8 @@ import creatorOnboardingChecklist from "@/catalog/examples/CreatorOnboardingChec
 import campaignInviteCard from "@/catalog/examples/CampaignInviteCard.doc";
 import contentSubmissionForm from "@/catalog/examples/ContentSubmissionForm.doc";
 import revisionRequestPanel from "@/catalog/examples/RevisionRequestPanel.doc";
+import campaignRoiSummary from "@/catalog/examples/CampaignROISummary.doc";
+import productSeedingTracker from "@/catalog/examples/ProductSeedingTracker.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -241,6 +243,8 @@ export const DOCS: ComponentDoc[] = [
   campaignInviteCard,
   contentSubmissionForm,
   revisionRequestPanel,
+  campaignRoiSummary,
+  productSeedingTracker,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -397,6 +401,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignInviteCard,
       contentSubmissionForm,
       revisionRequestPanel,
+      campaignRoiSummary,
+      productSeedingTracker,
     ],
   },
 ];
