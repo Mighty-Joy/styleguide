@@ -109,6 +109,8 @@ import liveDashboard from "@/catalog/examples/LiveDashboard.doc";
 import conversationThread from "@/catalog/examples/ConversationThread.doc";
 import performanceBenchmarks from "@/catalog/examples/PerformanceBenchmarks.doc";
 import campaignBudgetTracker from "@/catalog/examples/CampaignBudgetTracker.doc";
+import quickAddCreatorModal from "@/catalog/examples/QuickAddCreatorModal.doc";
+import affiliateCodeManager from "@/catalog/examples/AffiliateCodeManager.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -221,6 +223,8 @@ export const DOCS: ComponentDoc[] = [
   conversationThread,
   performanceBenchmarks,
   campaignBudgetTracker,
+  quickAddCreatorModal,
+  affiliateCodeManager,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -367,6 +371,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       liveDashboard,
       performanceBenchmarks,
       campaignBudgetTracker,
+      quickAddCreatorModal,
+      affiliateCodeManager,
     ],
   },
 ];
