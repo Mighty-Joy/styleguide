@@ -104,6 +104,9 @@ import postPerformance from "@/catalog/examples/PostPerformance.doc";
 import dealPipeline from "@/catalog/examples/DealPipeline.doc";
 import productSeeding from "@/catalog/examples/ProductSeeding.doc";
 import campaignSetup from "@/catalog/examples/CampaignSetup.doc";
+import creatorGrid from "@/catalog/examples/CreatorGrid.doc";
+import liveDashboard from "@/catalog/examples/LiveDashboard.doc";
+import conversationThread from "@/catalog/examples/ConversationThread.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -211,6 +214,9 @@ export const DOCS: ComponentDoc[] = [
   dealPipeline,
   productSeeding,
   campaignSetup,
+  creatorGrid,
+  liveDashboard,
+  conversationThread,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -297,7 +303,7 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
   },
   {
     group: "Creator",
-    entries: [creatorCard],
+    entries: [creatorCard, creatorGrid],
   },
   {
     group: "Patterns",
@@ -309,7 +315,7 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
   },
   {
     group: "Messaging",
-    entries: [emailThread, inboxView],
+    entries: [emailThread, inboxView, conversationThread],
   },
   {
     group: "Layout",
@@ -354,6 +360,7 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       dealPipeline,
       productSeeding,
       campaignSetup,
+      liveDashboard,
     ],
   },
 ];
