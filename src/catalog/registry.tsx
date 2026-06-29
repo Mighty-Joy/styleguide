@@ -115,6 +115,8 @@ import contractSignatureFlow from "@/catalog/examples/ContractSignatureFlow.doc"
 import creatorPaymentHistory from "@/catalog/examples/CreatorPaymentHistory.doc";
 import teamActivityFeed from "@/catalog/examples/TeamActivityFeed.doc";
 import campaignStatusBoard from "@/catalog/examples/CampaignStatusBoard.doc";
+import creatorOnboardingChecklist from "@/catalog/examples/CreatorOnboardingChecklist.doc";
+import campaignInviteCard from "@/catalog/examples/CampaignInviteCard.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -233,6 +235,8 @@ export const DOCS: ComponentDoc[] = [
   creatorPaymentHistory,
   teamActivityFeed,
   campaignStatusBoard,
+  creatorOnboardingChecklist,
+  campaignInviteCard,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -385,6 +389,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       creatorPaymentHistory,
       teamActivityFeed,
       campaignStatusBoard,
+      creatorOnboardingChecklist,
+      campaignInviteCard,
     ],
   },
 ];
