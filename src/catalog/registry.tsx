@@ -133,6 +133,8 @@ import creatorPortfolioView from "@/catalog/examples/CreatorPortfolioView.doc";
 import campaignComparisonTable from "@/catalog/examples/CampaignComparisonTable.doc";
 import affiliatePerformanceDashboard from "@/catalog/examples/AffiliatePerformanceDashboard.doc";
 import creatorUGCLibrary from "@/catalog/examples/CreatorUGCLibrary.doc";
+import campaignGoalTracker from "@/catalog/examples/CampaignGoalTracker.doc";
+import creatorMatchScore from "@/catalog/examples/CreatorMatchScore.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -269,6 +271,8 @@ export const DOCS: ComponentDoc[] = [
   campaignComparisonTable,
   affiliatePerformanceDashboard,
   creatorUGCLibrary,
+  campaignGoalTracker,
+  creatorMatchScore,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -439,6 +443,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignComparisonTable,
       affiliatePerformanceDashboard,
       creatorUGCLibrary,
+      campaignGoalTracker,
+      creatorMatchScore,
     ],
   },
 ];
