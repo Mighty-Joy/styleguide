@@ -107,6 +107,8 @@ import campaignSetup from "@/catalog/examples/CampaignSetup.doc";
 import creatorGrid from "@/catalog/examples/CreatorGrid.doc";
 import liveDashboard from "@/catalog/examples/LiveDashboard.doc";
 import conversationThread from "@/catalog/examples/ConversationThread.doc";
+import performanceBenchmarks from "@/catalog/examples/PerformanceBenchmarks.doc";
+import campaignBudgetTracker from "@/catalog/examples/CampaignBudgetTracker.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -217,6 +219,8 @@ export const DOCS: ComponentDoc[] = [
   creatorGrid,
   liveDashboard,
   conversationThread,
+  performanceBenchmarks,
+  campaignBudgetTracker,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -361,6 +365,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       productSeeding,
       campaignSetup,
       liveDashboard,
+      performanceBenchmarks,
+      campaignBudgetTracker,
     ],
   },
 ];

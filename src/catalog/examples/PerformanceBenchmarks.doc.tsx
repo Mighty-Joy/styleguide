@@ -189,7 +189,7 @@ function Demo() {
                 color: selected.has(c.id) ? TONES[c.tone].text : "var(--sd-font-secondary, #666)",
               }}
             >
-              <Avatar initials={c.initials} tone={c.tone} size="xs" />
+              <Avatar initials={c.initials} tone={c.tone} size="sm" />
               {c.name}
             </button>
           ))}
