@@ -125,6 +125,8 @@ import campaignPlanningBoard from "@/catalog/examples/CampaignPlanningBoard.doc"
 import outreachSequenceBuilder from "@/catalog/examples/OutreachSequenceBuilder.doc";
 import creatorEarningsOverview from "@/catalog/examples/CreatorEarningsOverview.doc";
 import partnershipAgreementViewer from "@/catalog/examples/PartnershipAgreementViewer.doc";
+import creatorApplicationReview from "@/catalog/examples/CreatorApplicationReview.doc";
+import campaignBriefBuilder from "@/catalog/examples/CampaignBriefBuilder.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -253,6 +255,8 @@ export const DOCS: ComponentDoc[] = [
   outreachSequenceBuilder,
   creatorEarningsOverview,
   partnershipAgreementViewer,
+  creatorApplicationReview,
+  campaignBriefBuilder,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -415,6 +419,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       outreachSequenceBuilder,
       creatorEarningsOverview,
       partnershipAgreementViewer,
+      creatorApplicationReview,
+      campaignBriefBuilder,
     ],
   },
 ];
