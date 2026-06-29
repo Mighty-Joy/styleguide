@@ -185,6 +185,7 @@ import campaignReachEstimator from "@/catalog/examples/CampaignReachEstimator.do
 import creatorEarningsCalculator from "@/catalog/examples/CreatorEarningsCalculator.doc";
 import brandCreatorWishlist from "@/catalog/examples/BrandCreatorWishlist.doc";
 import campaignAmbassadorSetup from "@/catalog/examples/CampaignAmbassadorSetup.doc";
+import campaignWrapReport from "@/catalog/examples/CampaignWrapReport.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -373,6 +374,7 @@ export const DOCS: ComponentDoc[] = [
   creatorEarningsCalculator,
   brandCreatorWishlist,
   campaignAmbassadorSetup,
+  campaignWrapReport,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -595,6 +597,7 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       creatorEarningsCalculator,
       brandCreatorWishlist,
       campaignAmbassadorSetup,
+      campaignWrapReport,
     ],
   },
 ];
