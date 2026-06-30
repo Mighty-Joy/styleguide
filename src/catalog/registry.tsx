@@ -4,6 +4,7 @@ import colors from "@/catalog/foundations/Colors.doc";
 import typography from "@/catalog/foundations/Typography.doc";
 import tokens from "@/catalog/foundations/Tokens.doc";
 import icons from "@/catalog/foundations/Icons.doc";
+import architecture from "@/catalog/foundations/Architecture.doc";
 import avatar from "@/components/ui/Avatar/Avatar.doc";
 import button from "@/components/ui/Button/Button.doc";
 import input from "@/components/ui/Input/Input.doc";
@@ -113,6 +114,7 @@ export const DOCS: ComponentDoc[] = [
   typography,
   tokens,
   icons,
+  architecture,
   avatar,
   button,
   input,
@@ -232,7 +234,7 @@ const planned = (
 export const NAV: { group: string; entries: NavEntry[] }[] = [
   {
     group: "Foundations",
-    entries: [colors, typography, tokens, icons],
+    entries: [colors, typography, tokens, icons, architecture],
   },
   {
     group: "Primitives",
