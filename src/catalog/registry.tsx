@@ -101,6 +101,8 @@ import teamMemberManagement from "@/catalog/examples/TeamMemberManagement.doc";
 import brandCampaignTimeline from "@/catalog/examples/BrandCampaignTimeline.doc";
 import creatorDiscoveryCard from "@/catalog/examples/CreatorDiscoveryCard.doc";
 import integrationSettings from "@/catalog/examples/IntegrationSettings.doc";
+import contentKanban from "@/catalog/examples/ContentKanban.doc";
+import agentChat from "@/catalog/examples/AgentChat.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -205,6 +207,8 @@ export const DOCS: ComponentDoc[] = [
   brandCampaignTimeline,
   creatorDiscoveryCard,
   integrationSettings,
+  contentKanban,
+  agentChat,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -341,6 +345,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       creatorDiscoveryCard,
       teamMemberManagement,
       integrationSettings,
+      contentKanban,
+      agentChat,
     ],
   },
 ];
