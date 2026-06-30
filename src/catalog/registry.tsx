@@ -107,6 +107,8 @@ import campaignTabLayout from "@/catalog/examples/CampaignTabLayout.doc";
 import creatorEngagementCard from "@/catalog/examples/CreatorEngagementCard.doc";
 import postsPage from "@/catalog/examples/PostsPage.doc";
 import listsPage from "@/catalog/examples/ListsPage.doc";
+import creatorCardVariants from "@/catalog/examples/CreatorCardVariants.doc";
+import dealWorkspace from "@/catalog/examples/DealWorkspace.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -217,6 +219,8 @@ export const DOCS: ComponentDoc[] = [
   creatorEngagementCard,
   postsPage,
   listsPage,
+  creatorCardVariants,
+  dealWorkspace,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -358,6 +362,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       creatorEngagementCard,
       postsPage,
       listsPage,
+      creatorCardVariants,
+      dealWorkspace,
     ],
   },
 ];
