@@ -1,17 +1,11 @@
 "use client";
 import React from "react";
 import Button from "@/components/ui/Button/Button";
+import campaignCardDoc from "@/catalog/examples/CampaignCard.doc";
 import type { ComponentDoc } from "@/catalog/types";
 
-/* ── seed data ──────────────────────────────────────────── */
-const CAMPAIGNS = [
-  { id: "c1", name: "Summer Glow",      deals: 6 },
-  { id: "c2", name: "Fall Collection",  deals: 4 },
-  { id: "c3", name: "Glow Up UGC",      deals: 2 },
-  { id: "c4", name: "Holiday Push",     deals: 8 },
-  { id: "c5", name: "Q4 Launch",        deals: 0 },
-  { id: "c6", name: "Micro-Influencer", deals: 3 },
-];
+/* campaign grid reuses the CampaignCard doc demo directly */
+const CampaignCardGrid = campaignCardDoc.demos[0].render;
 
 type Platform = "instagram" | "tiktok" | "youtube" | "ugc";
 
@@ -92,54 +86,6 @@ function PlatformGlyph({ platform }: { platform: Platform }) {
     }}>
       {PLATFORM_ICONS[platform]}
     </span>
-  );
-}
-
-/* ── CampaignCard ───────────────────────────────────────── */
-function CampaignCard({ name, deals }: { name: string; deals: number }) {
-  return (
-    <div style={{
-      display:      "flex",
-      alignItems:   "center",
-      gap:          10,
-      padding:      "10px 12px",
-      background:   "var(--sd-bg-secondary)",
-      border:       "1px solid var(--sd-border-default)",
-      borderRadius: 12,
-      cursor:       "pointer",
-    }}>
-      <div style={{
-        width:          32,
-        height:         32,
-        borderRadius:   8,
-        flexShrink:     0,
-        display:        "flex",
-        alignItems:     "center",
-        justifyContent: "center",
-        background:     "#EEF2FF",
-        color:          "#6366F1",
-      }}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-        </svg>
-      </div>
-      <div style={{ minWidth: 0 }}>
-        <div style={{
-          fontFamily:   "var(--sd-font)",
-          fontSize:     13,
-          fontWeight:   600,
-          color:        "var(--sd-font-primary)",
-          whiteSpace:   "nowrap",
-          overflow:     "hidden",
-          textOverflow: "ellipsis",
-        }}>
-          {name}
-        </div>
-        <div style={{ fontFamily: "var(--sd-font)", fontSize: 11, color: "var(--sd-font-tertiary)" }}>
-          {deals} deal{deals !== 1 ? "s" : ""}
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -301,9 +247,7 @@ function BrandHomeViewDemo() {
       {/* campaigns */}
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
         <SectionHeader title="Campaigns" actionLabel="Create campaign" />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
-          {CAMPAIGNS.map(c => <CampaignCard key={c.id} {...c} />)}
-        </div>
+        {CampaignCardGrid()}
       </div>
 
       {/* active deals */}
