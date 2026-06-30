@@ -105,6 +105,8 @@ import contentKanban from "@/catalog/examples/ContentKanban.doc";
 import agentChat from "@/catalog/examples/AgentChat.doc";
 import dealCard from "@/catalog/examples/DealCard.doc";
 import campaignCreatorsTable from "@/catalog/examples/CampaignCreatorsTable.doc";
+import brandSafetyPage from "@/catalog/examples/BrandSafetyPage.doc";
+import dealTaskCard from "@/catalog/examples/DealTaskCard.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -213,6 +215,8 @@ export const DOCS: ComponentDoc[] = [
   agentChat,
   dealCard,
   campaignCreatorsTable,
+  brandSafetyPage,
+  dealTaskCard,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -353,6 +357,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       agentChat,
       dealCard,
       campaignCreatorsTable,
+      brandSafetyPage,
+      dealTaskCard,
     ],
   },
 ];
