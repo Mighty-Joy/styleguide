@@ -103,6 +103,8 @@ import creatorDiscoveryCard from "@/catalog/examples/CreatorDiscoveryCard.doc";
 import integrationSettings from "@/catalog/examples/IntegrationSettings.doc";
 import contentKanban from "@/catalog/examples/ContentKanban.doc";
 import agentChat from "@/catalog/examples/AgentChat.doc";
+import dealCard from "@/catalog/examples/DealCard.doc";
+import campaignCreatorsTable from "@/catalog/examples/CampaignCreatorsTable.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -209,6 +211,8 @@ export const DOCS: ComponentDoc[] = [
   integrationSettings,
   contentKanban,
   agentChat,
+  dealCard,
+  campaignCreatorsTable,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -347,6 +351,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       integrationSettings,
       contentKanban,
       agentChat,
+      dealCard,
+      campaignCreatorsTable,
     ],
   },
 ];
