@@ -188,6 +188,8 @@ import campaignAmbassadorSetup from "@/catalog/examples/CampaignAmbassadorSetup.
 import campaignWrapReport from "@/catalog/examples/CampaignWrapReport.doc";
 import contentLicensingPanel from "@/catalog/examples/ContentLicensingPanel.doc";
 import brandCampaignTimeline from "@/catalog/examples/BrandCampaignTimeline.doc";
+import creatorPortfolioEditor from "@/catalog/examples/CreatorPortfolioEditor.doc";
+import campaignPaymentSchedule from "@/catalog/examples/CampaignPaymentSchedule.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -379,6 +381,8 @@ export const DOCS: ComponentDoc[] = [
   campaignWrapReport,
   contentLicensingPanel,
   brandCampaignTimeline,
+  creatorPortfolioEditor,
+  campaignPaymentSchedule,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -604,6 +608,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignWrapReport,
       contentLicensingPanel,
       brandCampaignTimeline,
+      creatorPortfolioEditor,
+      campaignPaymentSchedule,
     ],
   },
 ];
