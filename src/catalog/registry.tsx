@@ -198,6 +198,8 @@ import creatorContentCalendar from "@/catalog/examples/CreatorContentCalendar.do
 import brandCampaignApplicationsInbox from "@/catalog/examples/BrandCampaignApplicationsInbox.doc";
 import campaignDraftFeedback from "@/catalog/examples/CampaignDraftFeedback.doc";
 import creatorDiscoveryCard from "@/catalog/examples/CreatorDiscoveryCard.doc";
+import brandInvoiceGenerator from "@/catalog/examples/BrandInvoiceGenerator.doc";
+import creatorRateCard from "@/catalog/examples/CreatorRateCard.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -399,6 +401,8 @@ export const DOCS: ComponentDoc[] = [
   brandCampaignApplicationsInbox,
   campaignDraftFeedback,
   creatorDiscoveryCard,
+  brandInvoiceGenerator,
+  creatorRateCard,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -634,6 +638,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       brandCampaignApplicationsInbox,
       campaignDraftFeedback,
       creatorDiscoveryCard,
+      brandInvoiceGenerator,
+      creatorRateCard,
     ],
   },
 ];
