@@ -192,6 +192,8 @@ import creatorPortfolioEditor from "@/catalog/examples/CreatorPortfolioEditor.do
 import campaignPaymentSchedule from "@/catalog/examples/CampaignPaymentSchedule.doc";
 import brandCampaignBriefBuilder from "@/catalog/examples/BrandCampaignBriefBuilder.doc";
 import creatorNegotiationCounter from "@/catalog/examples/CreatorNegotiationCounter.doc";
+import brandCreatorCompare from "@/catalog/examples/BrandCreatorCompare.doc";
+import campaignDiscoveryFilter from "@/catalog/examples/CampaignDiscoveryFilter.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -387,6 +389,8 @@ export const DOCS: ComponentDoc[] = [
   campaignPaymentSchedule,
   brandCampaignBriefBuilder,
   creatorNegotiationCounter,
+  brandCreatorCompare,
+  campaignDiscoveryFilter,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -616,6 +620,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignPaymentSchedule,
       brandCampaignBriefBuilder,
       creatorNegotiationCounter,
+      brandCreatorCompare,
+      campaignDiscoveryFilter,
     ],
   },
 ];
