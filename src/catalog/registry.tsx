@@ -104,6 +104,8 @@ import creatorTodoList from "@/catalog/examples/CreatorTodoList.doc";
 import deliverableDetailDrawer from "@/catalog/examples/DeliverableDetailDrawer.doc";
 import campaignTabLayout from "@/catalog/examples/CampaignTabLayout.doc";
 import creatorEngagementCard from "@/catalog/examples/CreatorEngagementCard.doc";
+import postsPage from "@/catalog/examples/PostsPage.doc";
+import listsPage from "@/catalog/examples/ListsPage.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -211,6 +213,8 @@ export const DOCS: ComponentDoc[] = [
   deliverableDetailDrawer,
   campaignTabLayout,
   creatorEngagementCard,
+  postsPage,
+  listsPage,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -350,6 +354,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       deliverableDetailDrawer,
       campaignTabLayout,
       creatorEngagementCard,
+      postsPage,
+      listsPage,
     ],
   },
 ];
