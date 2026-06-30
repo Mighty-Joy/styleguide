@@ -2,37 +2,7 @@
 import React, { useState } from "react";
 import type { ComponentDoc } from "@/catalog/types";
 
-/* ── preview imports ────────────────────────────────────── */
-import brandHomeViewDoc      from "@/catalog/examples/BrandHomeView.doc";
-import creatorHomeViewDoc    from "@/catalog/examples/CreatorHomeView.doc";
-import managerHomeViewDoc    from "@/catalog/examples/ManagerHomeView.doc";
-import campaignCardDoc       from "@/catalog/examples/CampaignCard.doc";
-import campaignTabLayoutDoc  from "@/catalog/examples/CampaignTabLayout.doc";
-import dealKanbanDoc         from "@/catalog/examples/DealKanban.doc";
-import creatorDiscoveryDoc   from "@/catalog/examples/CreatorDiscovery.doc";
-import listsPageDoc          from "@/catalog/examples/ListsPage.doc";
-import inboxViewDoc          from "@/catalog/examples/InboxView.doc";
-import settingsPageDoc       from "@/catalog/examples/SettingsPage.doc";
-import rightPanelDoc         from "@/catalog/examples/RightPanel.doc";
-import creatorEngagementCardDoc from "@/catalog/examples/CreatorEngagementCard.doc";
-import creatorTodoListDoc    from "@/catalog/examples/CreatorTodoList.doc";
-import creatorPayoutWalletDoc from "@/catalog/examples/CreatorPayoutWallet.doc";
-
 const PAGE_PREVIEWS: Record<string, () => React.ReactNode> = {
-  "Brand Home":                  brandHomeViewDoc.demos[0].render,
-  "Creator Home":                creatorHomeViewDoc.demos[0].render,
-  "Manager Home":                managerHomeViewDoc.demos[0].render,
-  "Campaigns":                   campaignCardDoc.demos[0].render,
-  "Campaign Workspace":          campaignTabLayoutDoc.demos[0].render,
-  "Deals":                       dealKanbanDoc.demos[0].render,
-  "Creators / Discovery":        creatorDiscoveryDoc.demos[0].render,
-  "Roster / Lists":              listsPageDoc.demos[0].render,
-  "Inbox / Messaging":           inboxViewDoc.demos[0].render,
-  "Settings":                    settingsPageDoc.demos[0].render,
-  "Agent Rail":                  rightPanelDoc.demos[0].render,
-  "Creator Portal — My Deals":   creatorEngagementCardDoc.demos[0].render,
-  "Creator Portal — My Tasks":   creatorTodoListDoc.demos[0].render,
-  "Creator Portal — Earnings":   creatorPayoutWalletDoc.demos[0].render,
 };
 
 /* ── types ─────────────────────────────────────────────── */
