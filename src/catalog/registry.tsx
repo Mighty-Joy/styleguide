@@ -190,6 +190,8 @@ import contentLicensingPanel from "@/catalog/examples/ContentLicensingPanel.doc"
 import brandCampaignTimeline from "@/catalog/examples/BrandCampaignTimeline.doc";
 import creatorPortfolioEditor from "@/catalog/examples/CreatorPortfolioEditor.doc";
 import campaignPaymentSchedule from "@/catalog/examples/CampaignPaymentSchedule.doc";
+import brandCampaignBriefBuilder from "@/catalog/examples/BrandCampaignBriefBuilder.doc";
+import creatorNegotiationCounter from "@/catalog/examples/CreatorNegotiationCounter.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -383,6 +385,8 @@ export const DOCS: ComponentDoc[] = [
   brandCampaignTimeline,
   creatorPortfolioEditor,
   campaignPaymentSchedule,
+  brandCampaignBriefBuilder,
+  creatorNegotiationCounter,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -610,6 +614,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       brandCampaignTimeline,
       creatorPortfolioEditor,
       campaignPaymentSchedule,
+      brandCampaignBriefBuilder,
+      creatorNegotiationCounter,
     ],
   },
 ];
