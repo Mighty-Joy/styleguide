@@ -109,6 +109,9 @@ import postsPage from "@/catalog/examples/PostsPage.doc";
 import listsPage from "@/catalog/examples/ListsPage.doc";
 import creatorCardVariants from "@/catalog/examples/CreatorCardVariants.doc";
 import dealWorkspace from "@/catalog/examples/DealWorkspace.doc";
+import brandHomeView from "@/catalog/examples/BrandHomeView.doc";
+import creatorHomeView from "@/catalog/examples/CreatorHomeView.doc";
+import managerHomeView from "@/catalog/examples/ManagerHomeView.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -221,6 +224,9 @@ export const DOCS: ComponentDoc[] = [
   listsPage,
   creatorCardVariants,
   dealWorkspace,
+  brandHomeView,
+  creatorHomeView,
+  managerHomeView,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -364,6 +370,9 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       listsPage,
       creatorCardVariants,
       dealWorkspace,
+      brandHomeView,
+      creatorHomeView,
+      managerHomeView,
     ],
   },
 ];

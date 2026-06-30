@@ -18,25 +18,56 @@ type Composite = {
 type AppPage = {
   name:     string;
   path:     string;
-  persona:  "brand" | "creator" | "shared";
+  persona:  "brand" | "creator" | "manager" | "shared";
   composites: Composite[];
 };
 
 /* ── data ───────────────────────────────────────────────── */
 const PAGES: AppPage[] = [
   {
-    name: "Home",
-    path: "/",
-    persona: "shared",
+    name: "Brand Home",
+    path: "/home (brand)",
+    persona: "brand",
     composites: [
       {
-        name: "HomeView",
-        slug: "home-view",
+        name: "BrandHomeView",
+        slug: "brand-home-view",
         children: [
           { name: "StatCard",      type: "core"      },
-          { name: "RecordList",    type: "core"      },
           { name: "Badge",         type: "primitive" },
           { name: "Avatar",        type: "primitive" },
+          { name: "Button",        type: "primitive" },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Creator Home",
+    path: "/creator/opportunities",
+    persona: "creator",
+    composites: [
+      {
+        name: "CreatorHomeView",
+        slug: "creator-home-view",
+        children: [
+          { name: "Avatar",        type: "primitive" },
+          { name: "Badge",         type: "primitive" },
+          { name: "Button",        type: "primitive" },
+        ],
+      },
+    ],
+  },
+  {
+    name: "Manager Home",
+    path: "/manager/home",
+    persona: "manager",
+    composites: [
+      {
+        name: "ManagerHomeView",
+        slug: "manager-home-view",
+        children: [
+          { name: "Avatar",        type: "primitive" },
+          { name: "Badge",         type: "primitive" },
           { name: "Button",        type: "primitive" },
         ],
       },
@@ -452,6 +483,7 @@ const PAGES: AppPage[] = [
 const PERSONA_CFG = {
   brand:   { label: "Brand",   color: "#6366F1", bg: "#EEF2FF" },
   creator: { label: "Creator", color: "#10B981", bg: "#ECFDF5" },
+  manager: { label: "Manager", color: "#F59E0B", bg: "#FFFBEB" },
   shared:  { label: "Shared",  color: "#6B7280", bg: "#F3F4F6" },
 };
 
@@ -628,6 +660,7 @@ function ArchitectureOutline() {
 
   const brandPages   = PAGES.filter(p => p.persona === "brand");
   const creatorPages = PAGES.filter(p => p.persona === "creator");
+  const managerPages = PAGES.filter(p => p.persona === "manager");
   const sharedPages  = PAGES.filter(p => p.persona === "shared");
 
   const Section = ({ title, pages, color }: { title: string; pages: AppPage[]; color: string }) => (
@@ -680,9 +713,10 @@ function ArchitectureOutline() {
         ))}
       </div>
 
-      <Section title="Shared surfaces" pages={sharedPages} color="#6B7280" />
-      <Section title="Brand portal"    pages={brandPages}   color="#6366F1" />
-      <Section title="Creator portal"  pages={creatorPages} color="#10B981" />
+      <Section title="Shared surfaces"  pages={sharedPages}   color="#6B7280" />
+      <Section title="Brand portal"     pages={brandPages}    color="#6366F1" />
+      <Section title="Creator portal"   pages={creatorPages}  color="#10B981" />
+      <Section title="Manager portal"   pages={managerPages}  color="#F59E0B" />
     </div>
   );
 }
