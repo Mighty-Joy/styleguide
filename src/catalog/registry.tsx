@@ -194,6 +194,8 @@ import brandCampaignBriefBuilder from "@/catalog/examples/BrandCampaignBriefBuil
 import creatorNegotiationCounter from "@/catalog/examples/CreatorNegotiationCounter.doc";
 import brandCreatorCompare from "@/catalog/examples/BrandCreatorCompare.doc";
 import campaignDiscoveryFilter from "@/catalog/examples/CampaignDiscoveryFilter.doc";
+import creatorContentCalendar from "@/catalog/examples/CreatorContentCalendar.doc";
+import brandCampaignApplicationsInbox from "@/catalog/examples/BrandCampaignApplicationsInbox.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -391,6 +393,8 @@ export const DOCS: ComponentDoc[] = [
   creatorNegotiationCounter,
   brandCreatorCompare,
   campaignDiscoveryFilter,
+  creatorContentCalendar,
+  brandCampaignApplicationsInbox,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -622,6 +626,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       creatorNegotiationCounter,
       brandCreatorCompare,
       campaignDiscoveryFilter,
+      creatorContentCalendar,
+      brandCampaignApplicationsInbox,
     ],
   },
 ];
