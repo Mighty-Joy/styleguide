@@ -107,6 +107,8 @@ import dealCard from "@/catalog/examples/DealCard.doc";
 import campaignCreatorsTable from "@/catalog/examples/CampaignCreatorsTable.doc";
 import brandSafetyPage from "@/catalog/examples/BrandSafetyPage.doc";
 import dealTaskCard from "@/catalog/examples/DealTaskCard.doc";
+import creatorTodoList from "@/catalog/examples/CreatorTodoList.doc";
+import deliverableDetailDrawer from "@/catalog/examples/DeliverableDetailDrawer.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -217,6 +219,8 @@ export const DOCS: ComponentDoc[] = [
   campaignCreatorsTable,
   brandSafetyPage,
   dealTaskCard,
+  creatorTodoList,
+  deliverableDetailDrawer,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -359,6 +363,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       campaignCreatorsTable,
       brandSafetyPage,
       dealTaskCard,
+      creatorTodoList,
+      deliverableDetailDrawer,
     ],
   },
 ];
