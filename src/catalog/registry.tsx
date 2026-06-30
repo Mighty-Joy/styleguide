@@ -69,18 +69,11 @@ import creatorProfile from "@/catalog/examples/CreatorProfile.doc";
 import campaignTimeline from "@/catalog/examples/CampaignTimeline.doc";
 import approvalQueue from "@/catalog/examples/ApprovalQueue.doc";
 import negotiationView from "@/catalog/examples/NegotiationView.doc";
-import alertBanner from "@/components/ui/AlertBanner/AlertBanner.doc";
 import tagInput from "@/components/ui/TagInput/TagInput.doc";
 import numberInput from "@/components/ui/NumberInput/NumberInput.doc";
 import combobox from "@/components/ui/Combobox/Combobox.doc";
-import rangeSlider from "@/components/ui/RangeSlider/RangeSlider.doc";
-import rating from "@/components/ui/Rating/Rating.doc";
-import breadcrumb from "@/components/ui/Breadcrumb/Breadcrumb.doc";
 import progressBar from "@/components/ui/ProgressBar/ProgressBar.doc";
-import sectionCard from "@/components/ui/SectionCard/SectionCard.doc";
-import formLayout from "@/components/ui/FormLayout/FormLayout.doc";
 import inlineEdit from "@/components/ui/InlineEdit/InlineEdit.doc";
-import keyValueList from "@/components/ui/KeyValueList/KeyValueList.doc";
 import contentCard from "@/catalog/examples/ContentCard.doc";
 import deliverableTracker from "@/catalog/examples/DeliverableTracker.doc";
 import dealPipeline from "@/catalog/examples/DealPipeline.doc";
@@ -181,18 +174,11 @@ export const DOCS: ComponentDoc[] = [
   approvalQueue,
   creatorPanel,
   negotiationView,
-  alertBanner,
   tagInput,
   numberInput,
   combobox,
-  rangeSlider,
-  rating,
-  breadcrumb,
   progressBar,
-  sectionCard,
-  formLayout,
   inlineEdit,
-  keyValueList,
   contentCard,
   deliverableTracker,
   dealPipeline,
@@ -264,9 +250,6 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       tagInput,
       numberInput,
       combobox,
-      rangeSlider,
-      rating,
-      breadcrumb,
       progressBar,
     ],
   },
@@ -294,11 +277,7 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       pagination,
       statCard,
       dataTable,
-      alertBanner,
-      sectionCard,
-      formLayout,
       inlineEdit,
-      keyValueList,
     ],
   },
   {
