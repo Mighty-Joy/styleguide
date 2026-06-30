@@ -202,6 +202,8 @@ import brandInvoiceGenerator from "@/catalog/examples/BrandInvoiceGenerator.doc"
 import creatorRateCard from "@/catalog/examples/CreatorRateCard.doc";
 import campaignAffiliateDashboard from "@/catalog/examples/CampaignAffiliateDashboard.doc";
 import brandOutreachMessage from "@/catalog/examples/BrandOutreachMessage.doc";
+import brandContractSummary from "@/catalog/examples/BrandContractSummary.doc";
+import creatorEarningsHistory from "@/catalog/examples/CreatorEarningsHistory.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -407,6 +409,8 @@ export const DOCS: ComponentDoc[] = [
   creatorRateCard,
   campaignAffiliateDashboard,
   brandOutreachMessage,
+  brandContractSummary,
+  creatorEarningsHistory,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -646,6 +650,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       creatorRateCard,
       campaignAffiliateDashboard,
       brandOutreachMessage,
+      brandContractSummary,
+      creatorEarningsHistory,
     ],
   },
 ];
