@@ -200,6 +200,8 @@ import campaignDraftFeedback from "@/catalog/examples/CampaignDraftFeedback.doc"
 import creatorDiscoveryCard from "@/catalog/examples/CreatorDiscoveryCard.doc";
 import brandInvoiceGenerator from "@/catalog/examples/BrandInvoiceGenerator.doc";
 import creatorRateCard from "@/catalog/examples/CreatorRateCard.doc";
+import campaignAffiliateDashboard from "@/catalog/examples/CampaignAffiliateDashboard.doc";
+import brandOutreachMessage from "@/catalog/examples/BrandOutreachMessage.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -403,6 +405,8 @@ export const DOCS: ComponentDoc[] = [
   creatorDiscoveryCard,
   brandInvoiceGenerator,
   creatorRateCard,
+  campaignAffiliateDashboard,
+  brandOutreachMessage,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -640,6 +644,8 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       creatorDiscoveryCard,
       brandInvoiceGenerator,
       creatorRateCard,
+      campaignAffiliateDashboard,
+      brandOutreachMessage,
     ],
   },
 ];
