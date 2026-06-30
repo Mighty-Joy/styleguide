@@ -1,169 +1,316 @@
 "use client";
-import React, { useState } from "react";
-import Avatar from "@/components/ui/Avatar/Avatar";
-import Badge from "@/components/ui/Badge/Badge";
+import React from "react";
 import Button from "@/components/ui/Button/Button";
 import type { ComponentDoc } from "@/catalog/types";
 
-/* ── stat card ──────────────────────────────────────────── */
-function StatTile({ label, value, delta, icon }: { label: string; value: string; delta?: string; icon: string }) {
-  const up = delta?.startsWith("+");
+/* ── seed data ──────────────────────────────────────────── */
+const CAMPAIGNS = [
+  { id: "c1", name: "Summer Glow",      deals: 6 },
+  { id: "c2", name: "Fall Collection",  deals: 4 },
+  { id: "c3", name: "Glow Up UGC",      deals: 2 },
+  { id: "c4", name: "Holiday Push",     deals: 8 },
+  { id: "c5", name: "Q4 Launch",        deals: 0 },
+  { id: "c6", name: "Micro-Influencer", deals: 3 },
+];
+
+type Platform = "instagram" | "tiktok" | "youtube" | "ugc";
+
+type DeliverableChip = { platform: Platform; label: string };
+
+type Deal = {
+  id:           string;
+  name:         string;
+  handle:       string;
+  initials:     string;
+  campaign:     string;
+  amount:       string;
+  paymentLabel: string;
+  deliverables: DeliverableChip[];
+  status:       string;
+  statusColor:  string;
+  actionLabel?: string;
+};
+
+const DEALS: Deal[] = [
+  {
+    id: "d1",
+    name: "Priya Nair", handle: "@priya.glows", initials: "PN",
+    campaign: "Summer Glow", amount: "$1,200", paymentLabel: "2 payments",
+    deliverables: [{ platform: "instagram", label: "Reel" }, { platform: "instagram", label: "Story" }],
+    status: "Awaiting signature", statusColor: "#F59E0B",
+    actionLabel: "Counter-sign",
+  },
+  {
+    id: "d2",
+    name: "Leo Park", handle: "@leopark.ttk", initials: "LP",
+    campaign: "Summer Glow", amount: "$800", paymentLabel: "1 payment",
+    deliverables: [{ platform: "tiktok", label: "Integration" }],
+    status: "Content submitted", statusColor: "#6366F1",
+    actionLabel: "Approve content",
+  },
+  {
+    id: "d3",
+    name: "Maya Chen", handle: "@mayabeautyco", initials: "MC",
+    campaign: "Fall Collection", amount: "$2,400", paymentLabel: "3 payments",
+    deliverables: [{ platform: "youtube", label: "Integration" }, { platform: "ugc", label: "Content" }],
+    status: "Creator signed", statusColor: "#10B981",
+    actionLabel: "Counter-sign",
+  },
+  {
+    id: "d4",
+    name: "Sofia Ruiz", handle: "@sofiaruizbeauty", initials: "SR",
+    campaign: "Glow Up UGC", amount: "$650", paymentLabel: "1 payment",
+    deliverables: [{ platform: "instagram", label: "Story" }, { platform: "instagram", label: "Story" }, { platform: "instagram", label: "Story" }],
+    status: "Active", statusColor: "#6B7280",
+  },
+  {
+    id: "d5",
+    name: "Amir Hassan", handle: "@amirh.creates", initials: "AH",
+    campaign: "Holiday Push", amount: "$3,500", paymentLabel: "2 payments",
+    deliverables: [{ platform: "tiktok", label: "Reel" }, { platform: "instagram", label: "Reel" }],
+    status: "Payment due", statusColor: "#8B5CF6",
+    actionLabel: "Release payment",
+  },
+];
+
+/* ── helpers ────────────────────────────────────────────── */
+const PLATFORM_ICONS: Record<Platform, string> = {
+  instagram: "IG",
+  tiktok:    "TK",
+  youtube:   "YT",
+  ugc:       "🎬",
+};
+
+function PlatformGlyph({ platform }: { platform: Platform }) {
   return (
-    <div style={{
-      display:       "flex",
-      flexDirection: "column",
-      gap:           6,
-      padding:       "14px 16px",
-      background:    "var(--sd-bg-secondary)",
-      border:        "1px solid var(--sd-border-default)",
-      borderRadius:  10,
+    <span style={{
+      fontFamily: "var(--sd-font)",
+      fontSize:   9,
+      fontWeight: 700,
+      color:      "var(--sd-font-tertiary)",
+      opacity:    0.75,
     }}>
-      <div style={{ fontFamily: "var(--sd-font)", fontSize: 10, fontWeight: 700, color: "var(--sd-font-tertiary)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-        {icon} {label}
-      </div>
-      <div style={{ fontFamily: "var(--sd-font)", fontSize: 22, fontWeight: 800, color: "var(--sd-font-primary)" }}>
-        {value}
-      </div>
-      {delta && (
-        <div style={{ fontFamily: "var(--sd-font)", fontSize: 11, fontWeight: 600, color: up ? "#10B981" : "#EF4444" }}>
-          {delta} vs last month
-        </div>
-      )}
-    </div>
+      {PLATFORM_ICONS[platform]}
+    </span>
   );
 }
 
-/* ── campaign row ───────────────────────────────────────── */
-function CampaignRow({ name, brand, creatorCount, status, progress }: {
-  name: string; brand: string; creatorCount: number; status: string; progress: number;
-}) {
-  const statusColor = status === "Active" ? "#10B981" : status === "Draft" ? "#6B7280" : "#F59E0B";
+/* ── CampaignCard ───────────────────────────────────────── */
+function CampaignCard({ name, deals }: { name: string; deals: number }) {
   return (
     <div style={{
-      display:     "flex",
-      alignItems:  "center",
-      gap:         14,
-      padding:     "11px 0",
-      borderBottom:"1px solid var(--sd-border-default)",
+      display:      "flex",
+      alignItems:   "center",
+      gap:          10,
+      padding:      "10px 12px",
+      background:   "var(--sd-bg-secondary)",
+      border:       "1px solid var(--sd-border-default)",
+      borderRadius: 12,
+      cursor:       "pointer",
     }}>
       <div style={{
-        width:          36,
-        height:         36,
-        borderRadius:   9,
-        background:     "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)",
+        width:          32,
+        height:         32,
+        borderRadius:   8,
+        flexShrink:     0,
         display:        "flex",
         alignItems:     "center",
         justifyContent: "center",
-        fontSize:       16,
-        flexShrink:     0,
+        background:     "#EEF2FF",
+        color:          "#6366F1",
       }}>
-        ☀️
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+        </svg>
       </div>
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontFamily: "var(--sd-font)", fontSize: 13, fontWeight: 600, color: "var(--sd-font-primary)" }}>{name}</div>
-        <div style={{ fontFamily: "var(--sd-font)", fontSize: 11, color: "var(--sd-font-tertiary)" }}>{brand} · {creatorCount} creators</div>
-        <div style={{ marginTop: 4, height: 4, borderRadius: 100, background: "var(--sd-bg-tertiary)", overflow: "hidden" }}>
-          <div style={{ width: `${progress}%`, height: "100%", background: "#6366F1", borderRadius: 100 }} />
+      <div style={{ minWidth: 0 }}>
+        <div style={{
+          fontFamily:   "var(--sd-font)",
+          fontSize:     13,
+          fontWeight:   600,
+          color:        "var(--sd-font-primary)",
+          whiteSpace:   "nowrap",
+          overflow:     "hidden",
+          textOverflow: "ellipsis",
+        }}>
+          {name}
+        </div>
+        <div style={{ fontFamily: "var(--sd-font)", fontSize: 11, color: "var(--sd-font-tertiary)" }}>
+          {deals} deal{deals !== 1 ? "s" : ""}
         </div>
       </div>
-      <span style={{
-        fontFamily:   "var(--sd-font)",
-        fontSize:     10,
-        fontWeight:   600,
-        color:        statusColor,
-        background:   `${statusColor}18`,
-        borderRadius: 100,
-        padding:      "3px 9px",
-        flexShrink:   0,
-      }}>
-        {status}
-      </span>
-      <Button variant="secondary" size="sm">Open</Button>
     </div>
   );
 }
 
-/* ── deal action row ────────────────────────────────────── */
-function DealRow({ creator, initials, campaign, amount, action, actionColor = "#3B82F6" }: {
-  creator: string; initials: string; campaign: string; amount: string; action: string; actionColor?: string;
-}) {
+/* ── SectionHeader ──────────────────────────────────────── */
+function SectionHeader({ title, actionLabel }: { title: string; actionLabel: string }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <span style={{
+        fontFamily:    "var(--sd-font)",
+        fontSize:      12,
+        fontWeight:    700,
+        color:         "var(--sd-font-tertiary)",
+      }}>
+        {title}
+      </span>
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <Button variant="secondary" size="sm">+ {actionLabel}</Button>
+        <span style={{
+          fontFamily:  "var(--sd-font)",
+          fontSize:    11,
+          color:       "var(--sd-font-tertiary)",
+          cursor:      "pointer",
+          display:     "flex",
+          alignItems:  "center",
+          gap:         2,
+        }}>
+          See all ›
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/* ── DealRow ────────────────────────────────────────────── */
+function DealRow({ deal }: { deal: Deal }) {
+  const MAX_CHIPS = 4;
+  const shown = deal.deliverables.slice(0, MAX_CHIPS);
+  const extra = deal.deliverables.length - shown.length;
+
   return (
     <div style={{
       display:      "flex",
       alignItems:   "center",
       gap:          12,
-      padding:      "10px 0",
-      borderBottom: "1px solid var(--sd-border-default)",
+      padding:      "10px 14px",
+      background:   "var(--sd-bg-secondary)",
+      border:       "1px solid var(--sd-border-default)",
+      borderRadius: 12,
+      cursor:       "pointer",
     }}>
-      <Avatar size="sm" name={creator} initials={initials} />
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontFamily: "var(--sd-font)", fontSize: 12, fontWeight: 600, color: "var(--sd-font-primary)" }}>{creator}</div>
-        <div style={{ fontFamily: "var(--sd-font)", fontSize: 11, color: "var(--sd-font-tertiary)" }}>{campaign} · {amount}</div>
-      </div>
-      <span style={{
-        fontFamily:   "var(--sd-font)",
-        fontSize:     10,
-        fontWeight:   600,
-        color:        actionColor,
-        background:   `${actionColor}15`,
-        borderRadius: 100,
-        padding:      "3px 9px",
-        whiteSpace:   "nowrap",
-        flexShrink:   0,
+      {/* avatar */}
+      <div style={{
+        width:          34,
+        height:         34,
+        borderRadius:   "50%",
+        background:     "#EEF2FF",
+        display:        "flex",
+        alignItems:     "center",
+        justifyContent: "center",
+        fontFamily:     "var(--sd-font)",
+        fontSize:       11,
+        fontWeight:     700,
+        color:          "#6366F1",
+        flexShrink:     0,
       }}>
-        {action}
-      </span>
+        {deal.initials}
+      </div>
+
+      {/* identity + body */}
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontFamily: "var(--sd-font)", fontSize: 13, fontWeight: 600, color: "var(--sd-font-primary)" }}>
+          {deal.name}
+        </div>
+        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 6, marginTop: 3 }}>
+          {/* campaign context */}
+          <span style={{ fontFamily: "var(--sd-font)", fontSize: 11, color: "var(--sd-font-tertiary)" }}>
+            {deal.campaign}
+          </span>
+          {/* amount (hero) */}
+          <span style={{ fontFamily: "var(--sd-font)", fontSize: 13, fontWeight: 700, color: "var(--sd-font-primary)" }}>
+            {deal.amount}
+          </span>
+          <span style={{ fontFamily: "var(--sd-font)", fontSize: 11, color: "var(--sd-font-tertiary)" }}>
+            {deal.paymentLabel}
+          </span>
+          {/* deliverable chips */}
+          {shown.map((d, i) => (
+            <span key={i} style={{
+              display:      "inline-flex",
+              alignItems:   "center",
+              gap:          4,
+              padding:      "3px 8px",
+              borderRadius: 8,
+              background:   "var(--sd-bg-tertiary)",
+              fontFamily:   "var(--sd-font)",
+              fontSize:     11,
+            }}>
+              <PlatformGlyph platform={d.platform} />
+              {d.label}
+            </span>
+          ))}
+          {extra > 0 && (
+            <span style={{
+              padding:    "3px 8px",
+              borderRadius:8,
+              background: "var(--sd-bg-tertiary)",
+              fontFamily: "var(--sd-font)",
+              fontSize:   11,
+              color:      "var(--sd-font-tertiary)",
+            }}>
+              +{extra}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* trailing: status pill + action */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+        <span style={{
+          fontFamily:   "var(--sd-font)",
+          fontSize:     10,
+          fontWeight:   600,
+          color:        deal.statusColor,
+          background:   `${deal.statusColor}18`,
+          borderRadius: 100,
+          padding:      "3px 10px",
+          whiteSpace:   "nowrap",
+        }}>
+          {deal.status}
+        </span>
+        {deal.actionLabel && (
+          <Button variant="primary" size="sm">{deal.actionLabel}</Button>
+        )}
+      </div>
     </div>
   );
 }
 
+/* ── PageHeader ─────────────────────────────────────────── */
+function PageHeader() {
+  return (
+    <div style={{ marginBottom: 20 }}>
+      <div style={{ fontFamily: "var(--sd-font)", fontSize: 22, fontWeight: 800, color: "var(--sd-font-primary)" }}>
+        Home
+      </div>
+      <div style={{ fontFamily: "var(--sd-font)", fontSize: 13, color: "var(--sd-font-tertiary)", marginTop: 3 }}>
+        An overview of your recent activity and quick actions
+      </div>
+    </div>
+  );
+}
+
+/* ── Demo ───────────────────────────────────────────────── */
 function BrandHomeViewDemo() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-      {/* greeting */}
-      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
-        <div>
-          <div style={{ fontFamily: "var(--sd-font)", fontSize: 20, fontWeight: 800, color: "var(--sd-font-primary)" }}>
-            Good morning, Sarah 👋
-          </div>
-          <div style={{ fontFamily: "var(--sd-font)", fontSize: 13, color: "var(--sd-font-tertiary)", marginTop: 3 }}>
-            Aura Labs · Here's what needs your attention today.
-          </div>
+    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <PageHeader />
+
+      {/* campaigns */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        <SectionHeader title="Campaigns" actionLabel="Create campaign" />
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8 }}>
+          {CAMPAIGNS.map(c => <CampaignCard key={c.id} {...c} />)}
         </div>
-        <Button variant="primary" size="sm">+ New campaign</Button>
       </div>
 
-      {/* stats row */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-        <StatTile label="Active campaigns" value="3"      icon="📁" delta="+1"    />
-        <StatTile label="Active deals"     value="12"     icon="🤝" delta="+3"    />
-        <StatTile label="Content pieces"   value="28"     icon="🎬" delta="+8"    />
-        <StatTile label="Total reach"      value="1.4M"   icon="📡" delta="+22%"  />
-      </div>
-
-      {/* 2-col content */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
-        {/* campaigns */}
-        <div style={{ background: "var(--sd-bg-secondary)", border: "1px solid var(--sd-border-default)", borderRadius: 12, padding: "16px" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
-            <span style={{ fontFamily: "var(--sd-font)", fontSize: 13, fontWeight: 700, color: "var(--sd-font-primary)" }}>Campaigns</span>
-            <span style={{ fontFamily: "var(--sd-font)", fontSize: 12, color: "#6366F1", cursor: "pointer" }}>See all →</span>
-          </div>
-          <CampaignRow name="Summer Glow"    brand="Aura Labs" creatorCount={6} status="Active" progress={62} />
-          <CampaignRow name="Fall Collection" brand="Aura Labs" creatorCount={4} status="Active" progress={24} />
-          <CampaignRow name="Q4 Launch"      brand="Aura Labs" creatorCount={0} status="Draft"  progress={0}  />
-        </div>
-
-        {/* deals needing action */}
-        <div style={{ background: "var(--sd-bg-secondary)", border: "1px solid var(--sd-border-default)", borderRadius: 12, padding: "16px" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4 }}>
-            <span style={{ fontFamily: "var(--sd-font)", fontSize: 13, fontWeight: 700, color: "var(--sd-font-primary)" }}>Needs your attention</span>
-            <span style={{ fontFamily: "var(--sd-font)", fontSize: 12, color: "#6366F1", cursor: "pointer" }}>See all →</span>
-          </div>
-          <DealRow creator="Priya Nair"  initials="PN" campaign="Summer Glow" amount="$1,200" action="Review script"   actionColor="#F59E0B" />
-          <DealRow creator="Leo Park"    initials="LP" campaign="Summer Glow" amount="$800"   action="Approve content" actionColor="#10B981" />
-          <DealRow creator="Sofia Ruiz"  initials="SR" campaign="Fall"         amount="$2,400" action="Awaiting sign"   actionColor="#3B82F6" />
-          <DealRow creator="Amir Hassan" initials="AH" campaign="Fall"         amount="$3,500" action="Release payment" actionColor="#8B5CF6" />
+      {/* active deals */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 4 }}>
+        <SectionHeader title="Active deals" actionLabel="Create deal" />
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {DEALS.map(d => <DealRow key={d.id} deal={d} />)}
         </div>
       </div>
     </div>
@@ -175,19 +322,19 @@ const doc: ComponentDoc = {
   title:       "Brand Home View",
   group:       "Pre-built / Composite",
   status:      "stable",
-  summary:     "Brand home screen — greeting, 4 KPI tiles, campaigns with progress bars, and deals needing attention. Maps to HomeView.tsx (brand account context).",
-  description: "The brand operator's home page. Greets the user by name with account context. Four stat tiles (active campaigns, deals, content pieces, total reach). Two-column content area: campaign list with progress bars and status, and a priority deal feed showing deals that need brand action (review, approve, sign, pay). Maps to HomeView.tsx in the app.",
+  summary:     "Brand home — page header, 3-col campaign grid, and active deal rows with deliverable chips and action buttons.",
+  description: "The brand operator home page (HomeView.tsx). PageHeader, then a 3-column SimpleGrid of minimal CampaignCards (folder icon + name + deal count), followed by a stack of DealCreatorCard rows showing creator identity, campaign, amount, deliverable chips, status pill, and optional action button. Action-needed deals float to the top.",
   demos: [
-    { title: "Brand Home — Aura Labs", render: () => <BrandHomeViewDemo />, block: true, plain: true, maxWidth: 880 },
+    { title: "Aura Labs home", render: () => <BrandHomeViewDemo />, block: true, plain: true, maxWidth: 880 },
   ],
   props: [
     {
       rows: [
-        { name: "userName",   type: "string",        required: true,  description: "Brand operator name for the greeting." },
-        { name: "accountName",type: "string",        required: true,  description: "Brand/account name shown in the sub-line." },
-        { name: "stats",      type: "HomeStat[]",    required: true,  description: "KPI tiles (active campaigns, deals, content, reach)." },
-        { name: "campaigns",  type: "Campaign[]",    required: true,  description: "Active/draft campaigns with progress." },
-        { name: "actionDeals",type: "ActionDeal[]",  required: true,  description: "Deals needing brand attention, action-needed first." },
+        { name: "campaigns",   type: "WorkspaceCampaign[]", required: true,  description: "Up to 6 campaigns from useCampaign store, shown as folder tiles." },
+        { name: "deals",       type: "HomeDeal[]",          required: true,  description: "Up to 5 active deals, action-needed first." },
+        { name: "onNewCampaign", type: "() => void",        required: false, description: "Opens CreateCampaignModal." },
+        { name: "onNewDeal",   type: "() => void",          required: false, description: "Opens CreateDealModal." },
+        { name: "onOpenDeal",  type: "(id: string) => void",required: false, description: "Navigate to deal detail page." },
       ],
     },
   ],
