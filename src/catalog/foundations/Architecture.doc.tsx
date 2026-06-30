@@ -2,6 +2,39 @@
 import React, { useState } from "react";
 import type { ComponentDoc } from "@/catalog/types";
 
+/* ── preview imports ────────────────────────────────────── */
+import brandHomeViewDoc      from "@/catalog/examples/BrandHomeView.doc";
+import creatorHomeViewDoc    from "@/catalog/examples/CreatorHomeView.doc";
+import managerHomeViewDoc    from "@/catalog/examples/ManagerHomeView.doc";
+import campaignCardDoc       from "@/catalog/examples/CampaignCard.doc";
+import campaignTabLayoutDoc  from "@/catalog/examples/CampaignTabLayout.doc";
+import dealKanbanDoc         from "@/catalog/examples/DealKanban.doc";
+import creatorDiscoveryDoc   from "@/catalog/examples/CreatorDiscovery.doc";
+import listsPageDoc          from "@/catalog/examples/ListsPage.doc";
+import inboxViewDoc          from "@/catalog/examples/InboxView.doc";
+import settingsPageDoc       from "@/catalog/examples/SettingsPage.doc";
+import rightPanelDoc         from "@/catalog/examples/RightPanel.doc";
+import creatorEngagementCardDoc from "@/catalog/examples/CreatorEngagementCard.doc";
+import creatorTodoListDoc    from "@/catalog/examples/CreatorTodoList.doc";
+import creatorPayoutWalletDoc from "@/catalog/examples/CreatorPayoutWallet.doc";
+
+const PAGE_PREVIEWS: Record<string, () => React.ReactNode> = {
+  "Brand Home":                  brandHomeViewDoc.demos[0].render,
+  "Creator Home":                creatorHomeViewDoc.demos[0].render,
+  "Manager Home":                managerHomeViewDoc.demos[0].render,
+  "Campaigns":                   campaignCardDoc.demos[0].render,
+  "Campaign Workspace":          campaignTabLayoutDoc.demos[0].render,
+  "Deals":                       dealKanbanDoc.demos[0].render,
+  "Creators / Discovery":        creatorDiscoveryDoc.demos[0].render,
+  "Roster / Lists":              listsPageDoc.demos[0].render,
+  "Inbox / Messaging":           inboxViewDoc.demos[0].render,
+  "Settings":                    settingsPageDoc.demos[0].render,
+  "Agent Rail":                  rightPanelDoc.demos[0].render,
+  "Creator Portal — My Deals":   creatorEngagementCardDoc.demos[0].render,
+  "Creator Portal — My Tasks":   creatorTodoListDoc.demos[0].render,
+  "Creator Portal — Earnings":   creatorPayoutWalletDoc.demos[0].render,
+};
+
 /* ── types ─────────────────────────────────────────────── */
 type SubComponent = {
   name:  string;
@@ -493,6 +526,164 @@ const TYPE_CFG = {
   composite: { color: "#8B5CF6", label: "composite" },
 };
 
+/* ── PreviewPanel ───────────────────────────────────────── */
+function PreviewPanel({ page, onClose }: { page: AppPage; onClose: () => void }) {
+  const render = PAGE_PREVIEWS[page.name];
+  const persona = PERSONA_CFG[page.persona];
+
+  return (
+    <>
+      {/* backdrop */}
+      <div
+        onClick={onClose}
+        style={{
+          position:   "fixed",
+          inset:      0,
+          background: "rgba(0,0,0,0.35)",
+          zIndex:     1000,
+        }}
+      />
+
+      {/* panel */}
+      <div style={{
+        position:     "fixed",
+        top:          0,
+        right:        0,
+        width:        "min(920px, 100vw)",
+        height:       "100vh",
+        background:   "var(--sd-bg-secondary)",
+        borderLeft:   "1px solid var(--sd-border-default)",
+        display:      "flex",
+        flexDirection:"column",
+        zIndex:       1001,
+        boxShadow:    "-8px 0 40px rgba(0,0,0,0.15)",
+      }}>
+        {/* header */}
+        <div style={{
+          display:        "flex",
+          alignItems:     "center",
+          gap:            12,
+          padding:        "14px 20px",
+          borderBottom:   "1px solid var(--sd-border-default)",
+          background:     "var(--sd-bg-tertiary)",
+          flexShrink:     0,
+        }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontFamily: "var(--sd-font)", fontSize: 15, fontWeight: 800, color: "var(--sd-font-primary)" }}>
+              {page.name}
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 3 }}>
+              <code style={{
+                fontFamily:   "ui-monospace, SFMono-Regular, Menlo, monospace",
+                fontSize:     11,
+                color:        "var(--sd-font-tertiary)",
+                background:   "var(--sd-bg-secondary)",
+                border:       "1px solid var(--sd-border-default)",
+                borderRadius: 4,
+                padding:      "1px 6px",
+              }}>
+                {page.path}
+              </code>
+              <span style={{
+                fontFamily:   "var(--sd-font)",
+                fontSize:     10,
+                fontWeight:   600,
+                color:        persona.color,
+                background:   persona.bg,
+                borderRadius: 100,
+                padding:      "2px 8px",
+              }}>
+                {persona.label}
+              </span>
+              <span style={{
+                fontFamily:   "var(--sd-font)",
+                fontSize:     10,
+                color:        "var(--sd-font-tertiary)",
+              }}>
+                {page.composites.length} composite{page.composites.length !== 1 ? "s" : ""}
+              </span>
+            </div>
+          </div>
+          <button
+            onClick={onClose}
+            style={{
+              fontFamily:   "var(--sd-font)",
+              fontSize:     18,
+              color:        "var(--sd-font-tertiary)",
+              background:   "none",
+              border:       "1px solid var(--sd-border-default)",
+              borderRadius: 7,
+              width:        30,
+              height:       30,
+              display:      "flex",
+              alignItems:   "center",
+              justifyContent: "center",
+              cursor:       "pointer",
+              flexShrink:   0,
+              lineHeight:   1,
+            }}
+          >
+            ×
+          </button>
+        </div>
+
+        {/* content */}
+        <div style={{ flex: 1, overflowY: "auto", padding: "24px 20px" }}>
+          {render ? (
+            render()
+          ) : (
+            <div style={{
+              display:        "flex",
+              flexDirection:  "column",
+              alignItems:     "center",
+              justifyContent: "center",
+              height:         300,
+              gap:            12,
+              color:          "var(--sd-font-tertiary)",
+              fontFamily:     "var(--sd-font)",
+            }}>
+              <div style={{ fontSize: 32 }}>🚧</div>
+              <div style={{ fontSize: 13, fontWeight: 600 }}>Not yet built</div>
+              <div style={{ fontSize: 11 }}>This page doesn't have a composite demo yet.</div>
+            </div>
+          )}
+        </div>
+
+        {/* footer — composite links */}
+        <div style={{
+          borderTop:  "1px solid var(--sd-border-default)",
+          padding:    "10px 20px",
+          background: "var(--sd-bg-tertiary)",
+          display:    "flex",
+          gap:        8,
+          flexWrap:   "wrap",
+          flexShrink: 0,
+        }}>
+          {page.composites.filter(c => c.slug).map(c => (
+            <a
+              key={c.slug}
+              href={`/catalog/${c.slug}`}
+              style={{
+                fontFamily:     "var(--sd-font)",
+                fontSize:       11,
+                fontWeight:     600,
+                color:          "#6366F1",
+                background:     "#EEF2FF",
+                border:         "1px solid #C7D2FE",
+                borderRadius:   100,
+                padding:        "3px 10px",
+                textDecoration: "none",
+              }}
+            >
+              {c.name} →
+            </a>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
 /* ── components ─────────────────────────────────────────── */
 function TypeChip({ type }: { type: SubComponent["type"] }) {
   const cfg = TYPE_CFG[type];
@@ -538,12 +729,14 @@ function CompositeName({ composite }: { composite: Composite }) {
   );
 }
 
-function PageSection({ page, open, onToggle }: {
-  page:     AppPage;
-  open:     boolean;
-  onToggle: () => void;
+function PageSection({ page, open, onToggle, onPreview }: {
+  page:      AppPage;
+  open:      boolean;
+  onToggle:  () => void;
+  onPreview: () => void;
 }) {
-  const persona = PERSONA_CFG[page.persona];
+  const persona    = PERSONA_CFG[page.persona];
+  const hasPreview = page.name in PAGE_PREVIEWS;
 
   return (
     <div style={{
@@ -553,55 +746,91 @@ function PageSection({ page, open, onToggle }: {
       marginBottom: 10,
     }}>
       {/* page header */}
-      <button
-        onClick={onToggle}
-        style={{
-          width:          "100%",
-          display:        "flex",
-          alignItems:     "center",
-          gap:            12,
-          padding:        "12px 16px",
-          background:     open ? "var(--sd-bg-tertiary)" : "var(--sd-bg-secondary)",
-          border:         "none",
-          cursor:         "pointer",
-          textAlign:      "left",
-        }}
-      >
-        <span style={{
-          fontFamily:   "var(--sd-font)",
-          fontSize:     14,
-          fontWeight:   700,
-          color:        "var(--sd-font-primary)",
-          flex:         1,
-        }}>
-          {page.name}
-        </span>
-        <code style={{
-          fontFamily:   "ui-monospace, SFMono-Regular, Menlo, monospace",
-          fontSize:     11,
-          color:        "var(--sd-font-tertiary)",
-          background:   "var(--sd-bg-tertiary)",
-          border:       "1px solid var(--sd-border-default)",
-          borderRadius: 4,
-          padding:      "2px 7px",
-        }}>
-          {page.path}
-        </code>
-        <span style={{
-          fontFamily:   "var(--sd-font)",
-          fontSize:     10,
-          fontWeight:   600,
-          color:        persona.color,
-          background:   persona.bg,
-          borderRadius: 100,
-          padding:      "2px 8px",
-        }}>
-          {persona.label}
-        </span>
-        <span style={{ fontFamily: "var(--sd-font)", fontSize: 12, color: "var(--sd-font-tertiary)", transform: open ? "rotate(180deg)" : "none" }}>
-          ▾
-        </span>
-      </button>
+      <div style={{
+        display:    "flex",
+        alignItems: "center",
+        gap:        10,
+        padding:    "12px 16px",
+        background: open ? "var(--sd-bg-tertiary)" : "var(--sd-bg-secondary)",
+      }}>
+        {/* collapse toggle */}
+        <button
+          onClick={onToggle}
+          style={{
+            display:        "flex",
+            alignItems:     "center",
+            gap:            10,
+            flex:           1,
+            background:     "none",
+            border:         "none",
+            cursor:         "pointer",
+            textAlign:      "left",
+            padding:        0,
+          }}
+        >
+          <span style={{
+            fontFamily: "var(--sd-font)",
+            fontSize:   14,
+            fontWeight: 700,
+            color:      "var(--sd-font-primary)",
+            flex:       1,
+          }}>
+            {page.name}
+          </span>
+          <code style={{
+            fontFamily:   "ui-monospace, SFMono-Regular, Menlo, monospace",
+            fontSize:     11,
+            color:        "var(--sd-font-tertiary)",
+            background:   "var(--sd-bg-tertiary)",
+            border:       "1px solid var(--sd-border-default)",
+            borderRadius: 4,
+            padding:      "2px 7px",
+          }}>
+            {page.path}
+          </code>
+          <span style={{
+            fontFamily:   "var(--sd-font)",
+            fontSize:     10,
+            fontWeight:   600,
+            color:        persona.color,
+            background:   persona.bg,
+            borderRadius: 100,
+            padding:      "2px 8px",
+          }}>
+            {persona.label}
+          </span>
+          <span style={{
+            fontFamily: "var(--sd-font)",
+            fontSize:   12,
+            color:      "var(--sd-font-tertiary)",
+            transform:  open ? "rotate(180deg)" : "none",
+          }}>
+            ▾
+          </span>
+        </button>
+
+        {/* preview button */}
+        {hasPreview && (
+          <button
+            onClick={e => { e.stopPropagation(); onPreview(); }}
+            style={{
+              fontFamily:   "var(--sd-font)",
+              fontSize:     11,
+              fontWeight:   600,
+              color:        "#6366F1",
+              background:   "#EEF2FF",
+              border:       "1px solid #C7D2FE",
+              borderRadius: 7,
+              padding:      "4px 10px",
+              cursor:       "pointer",
+              flexShrink:   0,
+              whiteSpace:   "nowrap",
+            }}
+          >
+            Preview →
+          </button>
+        )}
+      </div>
 
       {/* outline body */}
       {open && (
@@ -612,13 +841,10 @@ function PageSection({ page, open, onToggle }: {
         }}>
           {page.composites.map((comp, ci) => (
             <div key={comp.name} style={{ marginBottom: ci < page.composites.length - 1 ? 14 : 0 }}>
-              {/* L1 composite */}
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
                 <span style={{ color: "var(--sd-border-default)", fontFamily: "monospace", fontSize: 13, marginRight: 2 }}>└─</span>
                 <CompositeName composite={comp} />
               </div>
-
-              {/* L2 sub-components */}
               <div style={{ paddingLeft: 26, display: "flex", flexDirection: "column", gap: 4 }}>
                 {comp.children.map((child, si) => (
                   <div key={`${child.name}-${si}`} style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -650,6 +876,7 @@ function ArchitectureOutline() {
   const [openPages, setOpenPages] = useState<Set<string>>(
     new Set(PAGES.map(p => p.name))
   );
+  const [previewPage, setPreviewPage] = useState<AppPage | null>(null);
 
   const toggle = (name: string) =>
     setOpenPages(prev => {
@@ -684,6 +911,7 @@ function ArchitectureOutline() {
           page={p}
           open={openPages.has(p.name)}
           onToggle={() => toggle(p.name)}
+          onPreview={() => setPreviewPage(p)}
         />
       ))}
     </div>
@@ -717,6 +945,10 @@ function ArchitectureOutline() {
       <Section title="Brand portal"     pages={brandPages}    color="#6366F1" />
       <Section title="Creator portal"   pages={creatorPages}  color="#10B981" />
       <Section title="Manager portal"   pages={managerPages}  color="#F59E0B" />
+
+      {previewPage && (
+        <PreviewPanel page={previewPage} onClose={() => setPreviewPage(null)} />
+      )}
     </div>
   );
 }
@@ -727,8 +959,8 @@ const doc: ComponentDoc = {
   title:       "App Architecture",
   group:       "Foundations",
   status:      "stable",
-  summary:     "Page-by-page outline of the app — which composite components cover each surface and which sub-components they use.",
-  description: "An indented outline of every page in the superdeal-fe app, the composite components that cover each surface, and the primitive/core sub-components they depend on. Composites link to their catalog entry. Use this as the canonical IA reference when adding new components.",
+  summary:     "Page-by-page outline of the app — click Preview to see the built composite for any page with sample data.",
+  description: "An indented outline of every page in the superdeal-fe app, the composite components that cover each surface, and the primitive/core sub-components they depend on. Pages with a built composite show a Preview button — clicking opens a full-height right panel rendering the actual component with sample data. Composites link to their catalog entry.",
   demos: [
     {
       title:  "App page map",
