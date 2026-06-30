@@ -58,34 +58,17 @@ import mediaGallery from "@/catalog/examples/MediaGallery.doc";
 import accordion from "@/components/ui/Accordion/Accordion.doc";
 import searchModal from "@/catalog/examples/SearchModal.doc";
 import pagination from "@/components/ui/Pagination/Pagination.doc";
-import contentApprovalModal from "@/catalog/examples/ContentApprovalModal.doc";
 import statCard from "@/components/ui/StatCard/StatCard.doc";
-import campaignAnalytics from "@/catalog/examples/CampaignAnalytics.doc";
 import creatorDiscovery from "@/catalog/examples/CreatorDiscovery.doc";
 import radioCard from "@/components/ui/RadioCard/RadioCard.doc";
-import rateCard from "@/catalog/examples/RateCard.doc";
-import campaignCreationWizard from "@/catalog/examples/CampaignCreationWizard.doc";
 import dataTable from "@/components/ui/DataTable/DataTable.doc";
 import settingsPage from "@/catalog/examples/SettingsPage.doc";
-import campaignRoster from "@/catalog/examples/CampaignRoster.doc";
 import dealOverview from "@/catalog/examples/DealOverview.doc";
 import paymentDashboard from "@/catalog/examples/PaymentDashboard.doc";
-import contentCalendar from "@/catalog/examples/ContentCalendar.doc";
 import creatorProfile from "@/catalog/examples/CreatorProfile.doc";
-import approvalQueue from "@/catalog/examples/ApprovalQueue.doc";
-import campaignReport from "@/catalog/examples/CampaignReport.doc";
 import campaignTimeline from "@/catalog/examples/CampaignTimeline.doc";
-import outreachDashboard from "@/catalog/examples/OutreachDashboard.doc";
-import audienceInsights from "@/catalog/examples/AudienceInsights.doc";
+import approvalQueue from "@/catalog/examples/ApprovalQueue.doc";
 import negotiationView from "@/catalog/examples/NegotiationView.doc";
-import brandProfile from "@/catalog/examples/BrandProfile.doc";
-import bulkInvitePanel from "@/catalog/examples/BulkInvitePanel.doc";
-import creatorReviewModal from "@/catalog/examples/CreatorReviewModal.doc";
-import creatorComparison from "@/catalog/examples/CreatorComparison.doc";
-import campaignBriefViewer from "@/catalog/examples/CampaignBriefViewer.doc";
-import creatorOnboarding from "@/catalog/examples/CreatorOnboarding.doc";
-import invoiceView from "@/catalog/examples/InvoiceView.doc";
-import workspaceSettings from "@/catalog/examples/WorkspaceSettings.doc";
 import alertBanner from "@/components/ui/AlertBanner/AlertBanner.doc";
 import tagInput from "@/components/ui/TagInput/TagInput.doc";
 import numberInput from "@/components/ui/NumberInput/NumberInput.doc";
@@ -100,110 +83,24 @@ import inlineEdit from "@/components/ui/InlineEdit/InlineEdit.doc";
 import keyValueList from "@/components/ui/KeyValueList/KeyValueList.doc";
 import contentCard from "@/catalog/examples/ContentCard.doc";
 import deliverableTracker from "@/catalog/examples/DeliverableTracker.doc";
-import postPerformance from "@/catalog/examples/PostPerformance.doc";
 import dealPipeline from "@/catalog/examples/DealPipeline.doc";
 import productSeeding from "@/catalog/examples/ProductSeeding.doc";
 import campaignSetup from "@/catalog/examples/CampaignSetup.doc";
 import creatorGrid from "@/catalog/examples/CreatorGrid.doc";
-import liveDashboard from "@/catalog/examples/LiveDashboard.doc";
 import conversationThread from "@/catalog/examples/ConversationThread.doc";
-import performanceBenchmarks from "@/catalog/examples/PerformanceBenchmarks.doc";
-import campaignBudgetTracker from "@/catalog/examples/CampaignBudgetTracker.doc";
 import quickAddCreatorModal from "@/catalog/examples/QuickAddCreatorModal.doc";
-import affiliateCodeManager from "@/catalog/examples/AffiliateCodeManager.doc";
 import contractSignatureFlow from "@/catalog/examples/ContractSignatureFlow.doc";
-import creatorPaymentHistory from "@/catalog/examples/CreatorPaymentHistory.doc";
-import teamActivityFeed from "@/catalog/examples/TeamActivityFeed.doc";
-import campaignStatusBoard from "@/catalog/examples/CampaignStatusBoard.doc";
 import creatorOnboardingChecklist from "@/catalog/examples/CreatorOnboardingChecklist.doc";
-import campaignInviteCard from "@/catalog/examples/CampaignInviteCard.doc";
 import contentSubmissionForm from "@/catalog/examples/ContentSubmissionForm.doc";
 import revisionRequestPanel from "@/catalog/examples/RevisionRequestPanel.doc";
-import campaignRoiSummary from "@/catalog/examples/CampaignROISummary.doc";
 import productSeedingTracker from "@/catalog/examples/ProductSeedingTracker.doc";
-import campaignPlanningBoard from "@/catalog/examples/CampaignPlanningBoard.doc";
-import outreachSequenceBuilder from "@/catalog/examples/OutreachSequenceBuilder.doc";
-import creatorEarningsOverview from "@/catalog/examples/CreatorEarningsOverview.doc";
-import partnershipAgreementViewer from "@/catalog/examples/PartnershipAgreementViewer.doc";
-import creatorApplicationReview from "@/catalog/examples/CreatorApplicationReview.doc";
-import campaignBriefBuilder from "@/catalog/examples/CampaignBriefBuilder.doc";
-import welcomeDashboard from "@/catalog/examples/WelcomeDashboard.doc";
-import contentPerformanceHeatmap from "@/catalog/examples/ContentPerformanceHeatmap.doc";
-import creatorPortfolioView from "@/catalog/examples/CreatorPortfolioView.doc";
-import campaignComparisonTable from "@/catalog/examples/CampaignComparisonTable.doc";
-import affiliatePerformanceDashboard from "@/catalog/examples/AffiliatePerformanceDashboard.doc";
-import creatorUGCLibrary from "@/catalog/examples/CreatorUGCLibrary.doc";
-import campaignGoalTracker from "@/catalog/examples/CampaignGoalTracker.doc";
-import creatorMatchScore from "@/catalog/examples/CreatorMatchScore.doc";
-import campaignMoodboard from "@/catalog/examples/CampaignMoodboard.doc";
-import creatorScorecard from "@/catalog/examples/CreatorScorecard.doc";
-import brandActionCenter from "@/catalog/examples/BrandActionCenter.doc";
-import campaignLaunchChecklist from "@/catalog/examples/CampaignLaunchChecklist.doc";
-import creatorTierCalculator from "@/catalog/examples/CreatorTierCalculator.doc";
-import postAnalyticsCard from "@/catalog/examples/PostAnalyticsCard.doc";
-import campaignSummaryReport from "@/catalog/examples/CampaignSummaryReport.doc";
-import creatorNotificationCenter from "@/catalog/examples/CreatorNotificationCenter.doc";
-import brandCreatorRoster from "@/catalog/examples/BrandCreatorRoster.doc";
-import campaignInvitePreview from "@/catalog/examples/CampaignInvitePreview.doc";
-import campaignContentFeed from "@/catalog/examples/CampaignContentFeed.doc";
-import paymentBatchApprover from "@/catalog/examples/PaymentBatchApprover.doc";
-import creatorDealHistory from "@/catalog/examples/CreatorDealHistory.doc";
-import campaignTemplateLibrary from "@/catalog/examples/CampaignTemplateLibrary.doc";
-import creatorMediaKit from "@/catalog/examples/CreatorMediaKit.doc";
-import teamMemberManagement from "@/catalog/examples/TeamMemberManagement.doc";
-import brandSafetyReport from "@/catalog/examples/BrandSafetyReport.doc";
-import integrationSettings from "@/catalog/examples/IntegrationSettings.doc";
-import campaignNegotiationThread from "@/catalog/examples/CampaignNegotiationThread.doc";
-import productCatalogPicker from "@/catalog/examples/ProductCatalogPicker.doc";
-import creatorAvailabilityCalendar from "@/catalog/examples/CreatorAvailabilityCalendar.doc";
-import discoveryFiltersPanel from "@/catalog/examples/DiscoveryFiltersPanel.doc";
-import campaignContentScheduler from "@/catalog/examples/CampaignContentScheduler.doc";
-import brandKitManager from "@/catalog/examples/BrandKitManager.doc";
-import creatorPayoutWallet from "@/catalog/examples/CreatorPayoutWallet.doc";
-import campaignMultiplatformBreakdown from "@/catalog/examples/CampaignMultiplatformBreakdown.doc";
-import billingAndSubscription from "@/catalog/examples/BillingAndSubscription.doc";
-import audienceOverlapChecker from "@/catalog/examples/AudienceOverlapChecker.doc";
-import campaignSpotlight from "@/catalog/examples/CampaignSpotlight.doc";
-import contentRevisionHistory from "@/catalog/examples/ContentRevisionHistory.doc";
-import creatorApplicationTracker from "@/catalog/examples/CreatorApplicationTracker.doc";
-import campaignQnABoard from "@/catalog/examples/CampaignQnABoard.doc";
-import creatorGoalSetting from "@/catalog/examples/CreatorGoalSetting.doc";
-import campaignFeedback from "@/catalog/examples/CampaignFeedback.doc";
-import campaignBudgetApproval from "@/catalog/examples/CampaignBudgetApproval.doc";
-import creatorReferralProgram from "@/catalog/examples/CreatorReferralProgram.doc";
 import creatorInsightsPanel from "@/catalog/examples/CreatorInsightsPanel.doc";
-import brandVerification from "@/catalog/examples/BrandVerification.doc";
-import campaignSpendTracker from "@/catalog/examples/CampaignSpendTracker.doc";
-import contentBriefChecklist from "@/catalog/examples/ContentBriefChecklist.doc";
-import creatorStatusCard from "@/catalog/examples/CreatorStatusCard.doc";
-import campaignHashtagTracker from "@/catalog/examples/CampaignHashtagTracker.doc";
-import campaignDeliverableMatrix from "@/catalog/examples/CampaignDeliverableMatrix.doc";
-import campaignExitSurvey from "@/catalog/examples/CampaignExitSurvey.doc";
-import campaignCreatorLeaderboard from "@/catalog/examples/CampaignCreatorLeaderboard.doc";
-import brandMessageBlast from "@/catalog/examples/BrandMessageBlast.doc";
-import campaignReachEstimator from "@/catalog/examples/CampaignReachEstimator.doc";
-import creatorEarningsCalculator from "@/catalog/examples/CreatorEarningsCalculator.doc";
-import brandCreatorWishlist from "@/catalog/examples/BrandCreatorWishlist.doc";
-import campaignAmbassadorSetup from "@/catalog/examples/CampaignAmbassadorSetup.doc";
-import campaignWrapReport from "@/catalog/examples/CampaignWrapReport.doc";
-import contentLicensingPanel from "@/catalog/examples/ContentLicensingPanel.doc";
+import creatorPayoutWallet from "@/catalog/examples/CreatorPayoutWallet.doc";
+import discoveryFiltersPanel from "@/catalog/examples/DiscoveryFiltersPanel.doc";
+import teamMemberManagement from "@/catalog/examples/TeamMemberManagement.doc";
 import brandCampaignTimeline from "@/catalog/examples/BrandCampaignTimeline.doc";
-import creatorPortfolioEditor from "@/catalog/examples/CreatorPortfolioEditor.doc";
-import campaignPaymentSchedule from "@/catalog/examples/CampaignPaymentSchedule.doc";
-import brandCampaignBriefBuilder from "@/catalog/examples/BrandCampaignBriefBuilder.doc";
-import creatorNegotiationCounter from "@/catalog/examples/CreatorNegotiationCounter.doc";
-import brandCreatorCompare from "@/catalog/examples/BrandCreatorCompare.doc";
-import campaignDiscoveryFilter from "@/catalog/examples/CampaignDiscoveryFilter.doc";
-import creatorContentCalendar from "@/catalog/examples/CreatorContentCalendar.doc";
-import brandCampaignApplicationsInbox from "@/catalog/examples/BrandCampaignApplicationsInbox.doc";
-import campaignDraftFeedback from "@/catalog/examples/CampaignDraftFeedback.doc";
 import creatorDiscoveryCard from "@/catalog/examples/CreatorDiscoveryCard.doc";
-import brandInvoiceGenerator from "@/catalog/examples/BrandInvoiceGenerator.doc";
-import creatorRateCard from "@/catalog/examples/CreatorRateCard.doc";
-import campaignAffiliateDashboard from "@/catalog/examples/CampaignAffiliateDashboard.doc";
-import brandOutreachMessage from "@/catalog/examples/BrandOutreachMessage.doc";
-import brandContractSummary from "@/catalog/examples/BrandContractSummary.doc";
-import creatorEarningsHistory from "@/catalog/examples/CreatorEarningsHistory.doc";
+import integrationSettings from "@/catalog/examples/IntegrationSettings.doc";
 
 /** Real, documented components (have demos + props). */
 export const DOCS: ComponentDoc[] = [
@@ -264,35 +161,18 @@ export const DOCS: ComponentDoc[] = [
   accordion,
   searchModal,
   pagination,
-  contentApprovalModal,
   statCard,
-  campaignAnalytics,
   creatorDiscovery,
   radioCard,
-  rateCard,
-  campaignCreationWizard,
   dataTable,
   settingsPage,
-  campaignRoster,
   dealOverview,
-  contentCalendar,
   paymentDashboard,
   creatorProfile,
   campaignTimeline,
-  campaignReport,
   approvalQueue,
   creatorPanel,
-  outreachDashboard,
-  audienceInsights,
   negotiationView,
-  brandProfile,
-  bulkInvitePanel,
-  creatorReviewModal,
-  creatorComparison,
-  campaignBriefViewer,
-  creatorOnboarding,
-  invoiceView,
-  workspaceSettings,
   alertBanner,
   tagInput,
   numberInput,
@@ -307,110 +187,24 @@ export const DOCS: ComponentDoc[] = [
   keyValueList,
   contentCard,
   deliverableTracker,
-  postPerformance,
   dealPipeline,
   productSeeding,
   campaignSetup,
   creatorGrid,
-  liveDashboard,
   conversationThread,
-  performanceBenchmarks,
-  campaignBudgetTracker,
   quickAddCreatorModal,
-  affiliateCodeManager,
   contractSignatureFlow,
-  creatorPaymentHistory,
-  teamActivityFeed,
-  campaignStatusBoard,
   creatorOnboardingChecklist,
-  campaignInviteCard,
   contentSubmissionForm,
   revisionRequestPanel,
-  campaignRoiSummary,
   productSeedingTracker,
-  campaignPlanningBoard,
-  outreachSequenceBuilder,
-  creatorEarningsOverview,
-  partnershipAgreementViewer,
-  creatorApplicationReview,
-  campaignBriefBuilder,
-  welcomeDashboard,
-  contentPerformanceHeatmap,
-  creatorPortfolioView,
-  campaignComparisonTable,
-  affiliatePerformanceDashboard,
-  creatorUGCLibrary,
-  campaignGoalTracker,
-  creatorMatchScore,
-  campaignMoodboard,
-  creatorScorecard,
-  brandActionCenter,
-  campaignLaunchChecklist,
-  creatorTierCalculator,
-  postAnalyticsCard,
-  campaignSummaryReport,
-  creatorNotificationCenter,
-  brandCreatorRoster,
-  campaignInvitePreview,
-  campaignContentFeed,
-  paymentBatchApprover,
-  creatorDealHistory,
-  campaignTemplateLibrary,
-  creatorMediaKit,
-  teamMemberManagement,
-  brandSafetyReport,
-  integrationSettings,
-  campaignNegotiationThread,
-  productCatalogPicker,
-  creatorAvailabilityCalendar,
-  discoveryFiltersPanel,
-  campaignContentScheduler,
-  brandKitManager,
-  creatorPayoutWallet,
-  campaignMultiplatformBreakdown,
-  billingAndSubscription,
-  audienceOverlapChecker,
-  campaignSpotlight,
-  contentRevisionHistory,
-  creatorApplicationTracker,
-  campaignQnABoard,
-  creatorGoalSetting,
-  campaignFeedback,
-  campaignBudgetApproval,
-  creatorReferralProgram,
   creatorInsightsPanel,
-  brandVerification,
-  campaignSpendTracker,
-  contentBriefChecklist,
-  creatorStatusCard,
-  campaignHashtagTracker,
-  campaignDeliverableMatrix,
-  campaignExitSurvey,
-  campaignCreatorLeaderboard,
-  brandMessageBlast,
-  campaignReachEstimator,
-  creatorEarningsCalculator,
-  brandCreatorWishlist,
-  campaignAmbassadorSetup,
-  campaignWrapReport,
-  contentLicensingPanel,
+  creatorPayoutWallet,
+  discoveryFiltersPanel,
+  teamMemberManagement,
   brandCampaignTimeline,
-  creatorPortfolioEditor,
-  campaignPaymentSchedule,
-  brandCampaignBriefBuilder,
-  creatorNegotiationCounter,
-  brandCreatorCompare,
-  campaignDiscoveryFilter,
-  creatorContentCalendar,
-  brandCampaignApplicationsInbox,
-  campaignDraftFeedback,
   creatorDiscoveryCard,
-  brandInvoiceGenerator,
-  creatorRateCard,
-  campaignAffiliateDashboard,
-  brandOutreachMessage,
-  brandContractSummary,
-  creatorEarningsHistory,
+  integrationSettings,
 ];
 
 /** Planned entries — render a "coming soon" stub, keep the roadmap visible. */
@@ -423,8 +217,7 @@ const planned = (
 
 /**
  * Ordered navigation. Mirrors the COMPONENTS.md taxonomy: primitives first,
- * then composed patterns, then the larger layout + pre-built surfaces that come
- * next (Creator Right Panel, app shell …).
+ * then composed patterns, then the larger layout + pre-built surfaces.
  */
 export const NAV: { group: string; entries: NavEntry[] }[] = [
   {
@@ -432,8 +225,6 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
     entries: [colors, typography, tokens, icons],
   },
   {
-    // Layer 1 — atomic building blocks everything else is made from.
-    // Nothing in this group may import another component from this list.
     group: "Primitives",
     entries: [
       avatar,
@@ -472,7 +263,6 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
     entries: [fieldGroup, fieldRow],
   },
   {
-    // Layer 2 — compose Primitives + tokens into reusable domain objects.
     group: "Core Components",
     entries: [
       platformIcon,
@@ -501,7 +291,7 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
   },
   {
     group: "Patterns",
-    entries: [creatorRecordList, activityTimeline, searchModal, mediaGallery, contentCalendar, audienceInsights, contentCard],
+    entries: [creatorRecordList, activityTimeline, searchModal, mediaGallery, contentCard],
   },
   {
     group: "Record Views",
@@ -526,132 +316,31 @@ export const NAV: { group: string; entries: NavEntry[] }[] = [
       briefCard,
       contractCard,
       notificationPanel,
-      contentApprovalModal,
-      campaignAnalytics,
       creatorDiscovery,
-      rateCard,
-      campaignCreationWizard,
-      campaignRoster,
       dealOverview,
       paymentDashboard,
       creatorProfile,
       campaignTimeline,
-      campaignReport,
+      brandCampaignTimeline,
       approvalQueue,
-      outreachDashboard,
       negotiationView,
-      brandProfile,
-      bulkInvitePanel,
-      creatorReviewModal,
-      creatorComparison,
-      campaignBriefViewer,
-      creatorOnboarding,
-      invoiceView,
-      workspaceSettings,
       settingsPage,
       deliverableTracker,
-      postPerformance,
       dealPipeline,
       productSeeding,
+      productSeedingTracker,
       campaignSetup,
-      liveDashboard,
-      performanceBenchmarks,
-      campaignBudgetTracker,
       quickAddCreatorModal,
-      affiliateCodeManager,
       contractSignatureFlow,
-      creatorPaymentHistory,
-      teamActivityFeed,
-      campaignStatusBoard,
       creatorOnboardingChecklist,
-      campaignInviteCard,
       contentSubmissionForm,
       revisionRequestPanel,
-      campaignRoiSummary,
-      productSeedingTracker,
-      campaignPlanningBoard,
-      outreachSequenceBuilder,
-      creatorEarningsOverview,
-      partnershipAgreementViewer,
-      creatorApplicationReview,
-      campaignBriefBuilder,
-      welcomeDashboard,
-      contentPerformanceHeatmap,
-      creatorPortfolioView,
-      campaignComparisonTable,
-      affiliatePerformanceDashboard,
-      creatorUGCLibrary,
-      campaignGoalTracker,
-      creatorMatchScore,
-      campaignMoodboard,
-      creatorScorecard,
-      brandActionCenter,
-      campaignLaunchChecklist,
-      creatorTierCalculator,
-      postAnalyticsCard,
-      campaignSummaryReport,
-      creatorNotificationCenter,
-      brandCreatorRoster,
-      campaignInvitePreview,
-      campaignContentFeed,
-      paymentBatchApprover,
-      creatorDealHistory,
-      campaignTemplateLibrary,
-      creatorMediaKit,
-      teamMemberManagement,
-      brandSafetyReport,
-      integrationSettings,
-      campaignNegotiationThread,
-      productCatalogPicker,
-      creatorAvailabilityCalendar,
-      discoveryFiltersPanel,
-      campaignContentScheduler,
-      brandKitManager,
-      creatorPayoutWallet,
-      campaignMultiplatformBreakdown,
-      billingAndSubscription,
-      audienceOverlapChecker,
-      campaignSpotlight,
-      contentRevisionHistory,
-      creatorApplicationTracker,
-      campaignQnABoard,
-      creatorGoalSetting,
-      campaignFeedback,
-      campaignBudgetApproval,
-      creatorReferralProgram,
       creatorInsightsPanel,
-      brandVerification,
-      campaignSpendTracker,
-      contentBriefChecklist,
-      creatorStatusCard,
-      campaignHashtagTracker,
-      campaignDeliverableMatrix,
-      campaignExitSurvey,
-      campaignCreatorLeaderboard,
-      brandMessageBlast,
-      campaignReachEstimator,
-      creatorEarningsCalculator,
-      brandCreatorWishlist,
-      campaignAmbassadorSetup,
-      campaignWrapReport,
-      contentLicensingPanel,
-      brandCampaignTimeline,
-      creatorPortfolioEditor,
-      campaignPaymentSchedule,
-      brandCampaignBriefBuilder,
-      creatorNegotiationCounter,
-      brandCreatorCompare,
-      campaignDiscoveryFilter,
-      creatorContentCalendar,
-      brandCampaignApplicationsInbox,
-      campaignDraftFeedback,
+      creatorPayoutWallet,
+      discoveryFiltersPanel,
       creatorDiscoveryCard,
-      brandInvoiceGenerator,
-      creatorRateCard,
-      campaignAffiliateDashboard,
-      brandOutreachMessage,
-      brandContractSummary,
-      creatorEarningsHistory,
+      teamMemberManagement,
+      integrationSettings,
     ],
   },
 ];
