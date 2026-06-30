@@ -287,6 +287,7 @@ const doc: ComponentDoc = {
       title:  "Aura Labs Brand Safety",
       render: () => <BrandSafetyPageDemo />,
       block:  true,
+      maxWidth: 880,
       plain:  true,
     },
   ],

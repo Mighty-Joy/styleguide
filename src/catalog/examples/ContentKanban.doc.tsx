@@ -269,6 +269,7 @@ const doc: ComponentDoc = {
       title:  "Summer Glow Campaign",
       render: () => <ContentKanbanDemo />,
       block:  true,
+      maxWidth: 880,
     },
   ],
   props: [

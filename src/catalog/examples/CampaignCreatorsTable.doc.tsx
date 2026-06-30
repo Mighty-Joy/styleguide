@@ -389,6 +389,7 @@ const doc: ComponentDoc = {
       title:  "Summer Glow Campaign",
       render: () => <CampaignCreatorsTableDemo />,
       block:  true,
+      maxWidth: 880,
       plain:  true,
     },
   ],

@@ -370,6 +370,7 @@ const doc: ComponentDoc = {
       title:  "Summer Glow Campaign",
       render: () => <AgentChatDemo />,
       block:  true,
+      maxWidth: 880,
     },
   ],
   props: [

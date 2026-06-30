@@ -28,6 +28,11 @@ export interface Demo {
   block?: boolean;
   /** Drop the dotted canvas background. */
   plain?: boolean;
+  /**
+   * Constrain the canvas content to a specific max-width (px).
+   * Use 880 for full-page surfaces (the app content width after the 240px left nav).
+   */
+  maxWidth?: number;
 }
 
 /** Everything the catalog needs to render one component's documentation page. */
